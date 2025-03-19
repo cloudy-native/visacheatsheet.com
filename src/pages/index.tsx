@@ -90,7 +90,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <Container width={"full"} maxW={"6xl"}>
           <VStack spacing={8} textAlign="center">
             <Heading color={useColorModeValue("blue.600", "blue.300")}>
-              Tell Us Where You're Headed
+              Where are you headed?
             </Heading>
             <Text
               fontSize="lg"

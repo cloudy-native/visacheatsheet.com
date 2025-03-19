@@ -1,4 +1,4 @@
-import { Box, Button, VStack } from "@chakra-ui/react";
+import { Box, Button, useColorModeValue, VStack } from "@chakra-ui/react";
 import { ArrowRight } from "lucide-react";
 import React from "react";
 import ReactCountryFlag from "react-country-flag";
@@ -34,11 +34,11 @@ const CountryCard: React.FC<CountryProps> = ({
         <Button variant="ghost" rightIcon={<ArrowRight size={16} />}>
           {name}
         </Button>
-        <ReactCountryFlag
-          countryCode={countryCode}
-          svg
-          style={{ fontSize: "120px" }}
-        />
+          <ReactCountryFlag
+            countryCode={countryCode}
+            svg
+            style={{ fontSize: "120px" }}
+          />
       </VStack>
     </Box>
   );
