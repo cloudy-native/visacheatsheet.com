@@ -1,4 +1,4 @@
-import { VisaDecisionTree } from './model';
+import { VisaDecisionTree } from "./model";
 
 export const canadaVisaDecisionTree: VisaDecisionTree = {
   startQuestionId: "q1",
@@ -11,7 +11,11 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
         { id: "a1", text: "Tourism/Visit", nextQuestionId: "q2" },
         { id: "a2", text: "Study", nextQuestionId: "q3" },
         { id: "a3", text: "Work", nextQuestionId: "q4" },
-        { id: "a4", text: "Immigration/Permanent Residence", nextQuestionId: "q5" },
+        {
+          id: "a4",
+          text: "Immigration/Permanent Residence",
+          nextQuestionId: "q5",
+        },
         { id: "a5", text: "Business", nextQuestionId: "q6" },
         { id: "a6", text: "Transit through Canada", nextQuestionId: "q12" },
         { id: "a7", text: "Family Reunification", nextQuestionId: "q7" },
@@ -38,7 +42,8 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
         { id: "a1", text: "Less than 6 months", nextQuestionId: "q9" },
         { id: "a2", text: "More than 6 months", nextQuestionId: "r2" },
       ],
-      helpText: "Study permits are typically required for programs longer than 6 months",
+      helpText:
+        "Study permits are typically required for programs longer than 6 months",
     },
 
     q4: {
@@ -46,11 +51,27 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
       text: "What type of work will you be doing in Canada?",
       answerType: "single",
       options: [
-        { id: "a1", text: "Temporary work with employer-specific work permit", nextQuestionId: "r3" },
+        {
+          id: "a1",
+          text: "Temporary work with employer-specific work permit",
+          nextQuestionId: "r3",
+        },
         { id: "a2", text: "Open work permit", nextQuestionId: "r4" },
-        { id: "a3", text: "International Experience Canada (Working Holiday)", nextQuestionId: "r5" },
-        { id: "a4", text: "Business visitor (no work permit needed)", nextQuestionId: "q6" },
-        { id: "a5", text: "Not sure what work permit I need", nextQuestionId: "r12" },
+        {
+          id: "a3",
+          text: "International Experience Canada (Working Holiday)",
+          nextQuestionId: "r5",
+        },
+        {
+          id: "a4",
+          text: "Business visitor (no work permit needed)",
+          nextQuestionId: "q6",
+        },
+        {
+          id: "a5",
+          text: "Not sure what work permit I need",
+          nextQuestionId: "r12",
+        },
       ],
       helpText: "Different types of work require different permits",
     },
@@ -60,14 +81,31 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
       text: "Which immigration program are you interested in?",
       answerType: "single",
       options: [
-        { id: "a1", text: "Express Entry (Federal Skilled Worker, Federal Skilled Trades, Canadian Experience Class)", nextQuestionId: "r7" },
-        { id: "a2", text: "Provincial Nominee Program (PNP)", nextQuestionId: "r8" },
+        {
+          id: "a1",
+          text: "Express Entry (Federal Skilled Worker, Federal Skilled Trades, Canadian Experience Class)",
+          nextQuestionId: "r7",
+        },
+        {
+          id: "a2",
+          text: "Provincial Nominee Program (PNP)",
+          nextQuestionId: "r8",
+        },
         { id: "a3", text: "Family Sponsorship", nextQuestionId: "r9" },
         { id: "a4", text: "Start-up Visa Program", nextQuestionId: "r10" },
-        { id: "a5", text: "Self-employed Persons Program", nextQuestionId: "r11" },
-        { id: "a6", text: "Not sure which program fits me", nextQuestionId: "r13" },
+        {
+          id: "a5",
+          text: "Self-employed Persons Program",
+          nextQuestionId: "r11",
+        },
+        {
+          id: "a6",
+          text: "Not sure which program fits me",
+          nextQuestionId: "r13",
+        },
       ],
-      helpText: "Canada has several immigration pathways based on different criteria",
+      helpText:
+        "Canada has several immigration pathways based on different criteria",
     },
 
     q6: {
@@ -75,13 +113,34 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
       text: "What type of business activities will you conduct?",
       answerType: "single",
       options: [
-        { id: "a1", text: "Attending meetings or conferences", nextQuestionId: "q8" },
-        { id: "a2", text: "Site visits or business consultations", nextQuestionId: "q8" },
-        { id: "a3", text: "Training at Canadian branch/affiliate (under 6 months)", nextQuestionId: "q8" },
-        { id: "a4", text: "Buying Canadian goods or services", nextQuestionId: "q8" },
-        { id: "a5", text: "Direct work for a Canadian company/client", nextQuestionId: "r3" },
+        {
+          id: "a1",
+          text: "Attending meetings or conferences",
+          nextQuestionId: "q8",
+        },
+        {
+          id: "a2",
+          text: "Site visits or business consultations",
+          nextQuestionId: "q8",
+        },
+        {
+          id: "a3",
+          text: "Training at Canadian branch/affiliate (under 6 months)",
+          nextQuestionId: "q8",
+        },
+        {
+          id: "a4",
+          text: "Buying Canadian goods or services",
+          nextQuestionId: "q8",
+        },
+        {
+          id: "a5",
+          text: "Direct work for a Canadian company/client",
+          nextQuestionId: "r3",
+        },
       ],
-      helpText: "Some business activities are allowed without a work permit, while others require one",
+      helpText:
+        "Some business activities are allowed without a work permit, while others require one",
     },
 
     q7: {
@@ -89,13 +148,30 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
       text: "What is your relationship with the person in Canada?",
       answerType: "single",
       options: [
-        { id: "a1", text: "Spouse/Partner of Canadian citizen or permanent resident", nextQuestionId: "r14" },
-        { id: "a2", text: "Parent/Grandparent of Canadian citizen or permanent resident", nextQuestionId: "r15" },
-        { id: "a3", text: "Child of Canadian citizen or permanent resident", nextQuestionId: "r16" },
+        {
+          id: "a1",
+          text: "Spouse/Partner of Canadian citizen or permanent resident",
+          nextQuestionId: "r14",
+        },
+        {
+          id: "a2",
+          text: "Parent/Grandparent of Canadian citizen or permanent resident",
+          nextQuestionId: "r15",
+        },
+        {
+          id: "a3",
+          text: "Child of Canadian citizen or permanent resident",
+          nextQuestionId: "r16",
+        },
         { id: "a4", text: "Other family relationship", nextQuestionId: "r17" },
-        { id: "a5", text: "Just visiting family (not immigrating)", nextQuestionId: "q8" },
+        {
+          id: "a5",
+          text: "Just visiting family (not immigrating)",
+          nextQuestionId: "q8",
+        },
       ],
-      helpText: "Family relationships determine which reunification programs you may be eligible for",
+      helpText:
+        "Family relationships determine which reunification programs you may be eligible for",
     },
 
     q8: {
@@ -104,11 +180,16 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
       answerType: "single",
       options: [
         { id: "a1", text: "U.S. citizen", nextQuestionId: "r18" },
-        { id: "a2", text: "Visa-exempt country (UK, EU, Australia, etc.)", nextQuestionId: "r1" },
+        {
+          id: "a2",
+          text: "Visa-exempt country (UK, EU, Australia, etc.)",
+          nextQuestionId: "r1",
+        },
         { id: "a3", text: "Visa-required country", nextQuestionId: "r19" },
         { id: "a4", text: "Not sure if I need a visa", nextQuestionId: "r20" },
       ],
-      helpText: "Your citizenship determines if you need a visitor visa or just an eTA",
+      helpText:
+        "Your citizenship determines if you need a visitor visa or just an eTA",
     },
 
     q9: {
@@ -117,10 +198,15 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
       answerType: "single",
       options: [
         { id: "a1", text: "U.S. citizen", nextQuestionId: "r21" },
-        { id: "a2", text: "Visa-exempt country (UK, EU, Australia, etc.)", nextQuestionId: "r22" },
+        {
+          id: "a2",
+          text: "Visa-exempt country (UK, EU, Australia, etc.)",
+          nextQuestionId: "r22",
+        },
         { id: "a3", text: "Visa-required country", nextQuestionId: "r23" },
       ],
-      helpText: "Short-term studies under 6 months may not need a study permit, but entry requirements vary by citizenship",
+      helpText:
+        "Short-term studies under 6 months may not need a study permit, but entry requirements vary by citizenship",
     },
 
     q10: {
@@ -130,10 +216,15 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
       options: [
         { id: "a1", text: "Yes, on-campus only", nextQuestionId: "r24" },
         { id: "a2", text: "Yes, on and off-campus", nextQuestionId: "r24" },
-        { id: "a3", text: "Yes, co-op/internship as part of my program", nextQuestionId: "r25" },
+        {
+          id: "a3",
+          text: "Yes, co-op/internship as part of my program",
+          nextQuestionId: "r25",
+        },
         { id: "a4", text: "No", nextQuestionId: "r2" },
       ],
-      helpText: "Study permits often include limited work privileges, but special cases may need additional permits",
+      helpText:
+        "Study permits often include limited work privileges, but special cases may need additional permits",
     },
 
     q11: {
@@ -142,11 +233,20 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
       answerType: "single",
       options: [
         { id: "a1", text: "Yes, with LMIA approval", nextQuestionId: "r3" },
-        { id: "a2", text: "Yes, LMIA-exempt under international agreements", nextQuestionId: "r26" },
-        { id: "a3", text: "Yes, intra-company transfer", nextQuestionId: "r27" },
+        {
+          id: "a2",
+          text: "Yes, LMIA-exempt under international agreements",
+          nextQuestionId: "r26",
+        },
+        {
+          id: "a3",
+          text: "Yes, intra-company transfer",
+          nextQuestionId: "r27",
+        },
         { id: "a4", text: "No offer yet", nextQuestionId: "r28" },
       ],
-      helpText: "The type of job offer affects the work permit application process",
+      helpText:
+        "The type of job offer affects the work permit application process",
     },
 
     q12: {
@@ -154,10 +254,15 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
       text: "Will you leave the airport during your transit through Canada?",
       answerType: "single",
       options: [
-        { id: "a1", text: "No, staying in the international transit area", nextQuestionId: "q13" },
+        {
+          id: "a1",
+          text: "No, staying in the international transit area",
+          nextQuestionId: "q13",
+        },
         { id: "a2", text: "Yes, will exit the airport", nextQuestionId: "q8" },
       ],
-      helpText: "Transit requirements depend on whether you will leave the airport transit area",
+      helpText:
+        "Transit requirements depend on whether you will leave the airport transit area",
     },
 
     q13: {
@@ -166,10 +271,19 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
       answerType: "single",
       options: [
         { id: "a1", text: "U.S. citizen", nextQuestionId: "r29" },
-        { id: "a2", text: "Transit without Visa Program eligible citizenship", nextQuestionId: "r30" },
-        { id: "a3", text: "Visa-required country not in Transit without Visa Program", nextQuestionId: "r31" },
+        {
+          id: "a2",
+          text: "Transit without Visa Program eligible citizenship",
+          nextQuestionId: "r30",
+        },
+        {
+          id: "a3",
+          text: "Visa-required country not in Transit without Visa Program",
+          nextQuestionId: "r31",
+        },
       ],
-      helpText: "Some nationalities need transit visas even if staying in the international area of a Canadian airport",
+      helpText:
+        "Some nationalities need transit visas even if staying in the international area of a Canadian airport",
     },
   },
 
@@ -177,7 +291,7 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
     r1: {
       id: "r1",
       title: "Electronic Travel Authorization (eTA)",
-      description: 
+      description:
         "For visa-exempt foreign nationals flying to or transiting through Canada. Not required for U.S. citizens or travelers entering by land or sea.",
       requirements: [
         "Valid passport from a visa-exempt country",
@@ -193,27 +307,71 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
           url: "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/eta/apply.html",
         },
       ],
-      processingTime: "Most applications are approved within minutes, but some may take several days",
+      processingTime:
+        "Most applications are approved within minutes, but some may take several days",
       cost: {
         amount: 7,
         currency: "CAD",
       },
       alternativeOptions: ["r19"],
       applicableCountries: [
-        "Andorra", "Australia", "Austria", "Bahamas", "Barbados", "Belgium", "Brunei", "Bulgaria", 
-        "Chile", "Croatia", "Cyprus", "Czech Republic", "Denmark", "Estonia", "Finland", "France", 
-        "Germany", "Greece", "Hong Kong", "Hungary", "Iceland", "Ireland", "Israel", "Italy", 
-        "Japan", "Latvia", "Liechtenstein", "Lithuania", "Luxembourg", "Malta", "Mexico", "Monaco", 
-        "Netherlands", "New Zealand", "Norway", "Poland", "Portugal", "Romania", "San Marino", 
-        "Singapore", "Slovakia", "Slovenia", "South Korea", "Spain", "Sweden", "Switzerland", 
-        "Taiwan", "United Kingdom", "Vatican City State", "and others"
+        "Andorra",
+        "Australia",
+        "Austria",
+        "Bahamas",
+        "Barbados",
+        "Belgium",
+        "Brunei",
+        "Bulgaria",
+        "Chile",
+        "Croatia",
+        "Cyprus",
+        "Czech Republic",
+        "Denmark",
+        "Estonia",
+        "Finland",
+        "France",
+        "Germany",
+        "Greece",
+        "Hong Kong",
+        "Hungary",
+        "Iceland",
+        "Ireland",
+        "Israel",
+        "Italy",
+        "Japan",
+        "Latvia",
+        "Liechtenstein",
+        "Lithuania",
+        "Luxembourg",
+        "Malta",
+        "Mexico",
+        "Monaco",
+        "Netherlands",
+        "New Zealand",
+        "Norway",
+        "Poland",
+        "Portugal",
+        "Romania",
+        "San Marino",
+        "Singapore",
+        "Slovakia",
+        "Slovenia",
+        "South Korea",
+        "Spain",
+        "Sweden",
+        "Switzerland",
+        "Taiwan",
+        "United Kingdom",
+        "Vatican City State",
+        "and others",
       ],
     },
 
     r2: {
       id: "r2",
       title: "Study Permit",
-      description: 
+      description:
         "Required for international students enrolled in programs longer than 6 months at designated learning institutions in Canada.",
       requirements: [
         "Acceptance letter from a designated learning institution in Canada",
@@ -230,7 +388,8 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
           url: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/apply.html",
         },
       ],
-      processingTime: "Varies by country, typically 4-12 weeks; check current processing times on the IRCC website",
+      processingTime:
+        "Varies by country, typically 4-12 weeks; check current processing times on the IRCC website",
       cost: {
         amount: 150,
         currency: "CAD (plus biometrics fee of 85 CAD)",
@@ -242,7 +401,7 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
     r3: {
       id: "r3",
       title: "Employer-Specific Work Permit",
-      description: 
+      description:
         "Allows you to work in Canada for a specific employer, in a specific position, for a limited time as stated on the work permit.",
       requirements: [
         "Job offer from a Canadian employer",
@@ -271,7 +430,7 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
     r4: {
       id: "r4",
       title: "Open Work Permit",
-      description: 
+      description:
         "Allows you to work for any employer in Canada (with some exceptions). Available only in specific circumstances.",
       requirements: [
         "Eligibility for one of the open work permit categories:",
@@ -291,16 +450,19 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
       processingTime: "Varies by category and country, typically 4-16 weeks",
       cost: {
         amount: 155,
-        currency: "CAD (work permit) + 100 CAD (open permit holder fee) + 85 CAD (biometrics)",
+        currency:
+          "CAD (work permit) + 100 CAD (open permit holder fee) + 85 CAD (biometrics)",
       },
       alternativeOptions: ["r3", "r5"],
-      applicableCountries: ["All countries, but eligibility depends on specific circumstances"],
+      applicableCountries: [
+        "All countries, but eligibility depends on specific circumstances",
+      ],
     },
 
     r5: {
       id: "r5",
       title: "International Experience Canada (Working Holiday)",
-      description: 
+      description:
         "Work permits for young adults (generally 18-35) from countries with youth mobility agreements with Canada.",
       requirements: [
         "Citizenship in a country with an IEC agreement with Canada",
@@ -319,25 +481,55 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
           url: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/iec.html",
         },
       ],
-      processingTime: "Varies by country and pool draw timing, typically 4-8 weeks after invitation",
+      processingTime:
+        "Varies by country and pool draw timing, typically 4-8 weeks after invitation",
       cost: {
         amount: 153,
-        currency: "CAD (participation fee) + 155 CAD (work permit) + 85 CAD (biometrics)",
+        currency:
+          "CAD (participation fee) + 155 CAD (work permit) + 85 CAD (biometrics)",
       },
       alternativeOptions: ["r3", "r4"],
       applicableCountries: [
-        "Australia", "Austria", "Belgium", "Chile", "Costa Rica", "Croatia", "Czech Republic", 
-        "Denmark", "Estonia", "France", "Germany", "Greece", "Hong Kong", "Ireland", "Italy", 
-        "Japan", "Latvia", "Lithuania", "Luxembourg", "Mexico", "Netherlands", "New Zealand", 
-        "Norway", "Poland", "Portugal", "Slovakia", "Slovenia", "South Korea", "Spain", 
-        "Sweden", "Switzerland", "Taiwan", "United Kingdom"
+        "Australia",
+        "Austria",
+        "Belgium",
+        "Chile",
+        "Costa Rica",
+        "Croatia",
+        "Czech Republic",
+        "Denmark",
+        "Estonia",
+        "France",
+        "Germany",
+        "Greece",
+        "Hong Kong",
+        "Ireland",
+        "Italy",
+        "Japan",
+        "Latvia",
+        "Lithuania",
+        "Luxembourg",
+        "Mexico",
+        "Netherlands",
+        "New Zealand",
+        "Norway",
+        "Poland",
+        "Portugal",
+        "Slovakia",
+        "Slovenia",
+        "South Korea",
+        "Spain",
+        "Sweden",
+        "Switzerland",
+        "Taiwan",
+        "United Kingdom",
       ],
     },
 
     r6: {
       id: "r6",
       title: "Temporary Resident Visa (Long Stay Visitor)",
-      description: 
+      description:
         "For visitors planning to stay in Canada for an extended period (up to 6 months with possible extensions).",
       requirements: [
         "Proof of ties to your home country (property, family, job, etc.)",
@@ -367,7 +559,7 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
     r7: {
       id: "r7",
       title: "Express Entry",
-      description: 
+      description:
         "An online system that manages applications for permanent residence for skilled workers under Federal Skilled Worker Program, Federal Skilled Trades Program, and Canadian Experience Class.",
       requirements: [
         "Create Express Entry profile and be placed in the pool of candidates",
@@ -386,10 +578,12 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
           url: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry.html",
         },
       ],
-      processingTime: "6 months or less for 80% of applications after invitation to apply",
+      processingTime:
+        "6 months or less for 80% of applications after invitation to apply",
       cost: {
         amount: 1325,
-        currency: "CAD (principal applicant) + 1325 CAD (spouse) + 225 CAD (per child) + 85 CAD (biometrics per person)",
+        currency:
+          "CAD (principal applicant) + 1325 CAD (spouse) + 225 CAD (per child) + 85 CAD (biometrics per person)",
       },
       alternativeOptions: ["r8", "r9"],
       applicableCountries: ["All countries"],
@@ -398,7 +592,7 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
     r8: {
       id: "r8",
       title: "Provincial Nominee Program (PNP)",
-      description: 
+      description:
         "Immigration programs run by provinces and territories to nominate individuals who wish to immigrate to a specific province and have the skills, education and work experience to contribute to that province's economy.",
       requirements: [
         "Requirements vary by province and specific program stream",
@@ -419,10 +613,12 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
           url: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/provincial-nominees.html",
         },
       ],
-      processingTime: "Varies by province (for nomination) + federal processing time (typically 6-18 months)",
+      processingTime:
+        "Varies by province (for nomination) + federal processing time (typically 6-18 months)",
       cost: {
         amount: 0,
-        currency: "CAD (varies by province for nomination) + 1325 CAD (federal PR application) + 85 CAD (biometrics)",
+        currency:
+          "CAD (varies by province for nomination) + 1325 CAD (federal PR application) + 85 CAD (biometrics)",
       },
       alternativeOptions: ["r7", "r10"],
       applicableCountries: ["All countries"],
@@ -431,7 +627,7 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
     r9: {
       id: "r9",
       title: "Family Sponsorship",
-      description: 
+      description:
         "Canadian citizens and permanent residents can sponsor eligible family members to become permanent residents of Canada.",
       requirements: [
         "Sponsor must be Canadian citizen or permanent resident",
@@ -450,10 +646,12 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
           url: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/family-sponsorship.html",
         },
       ],
-      processingTime: "12 months for spouse/partner/child; 20-24 months for parents/grandparents",
+      processingTime:
+        "12 months for spouse/partner/child; 20-24 months for parents/grandparents",
       cost: {
         amount: 1050,
-        currency: "CAD (sponsorship fee + processing fee) + 85 CAD (biometrics) + 500 CAD (right of permanent residence fee)",
+        currency:
+          "CAD (sponsorship fee + processing fee) + 85 CAD (biometrics) + 500 CAD (right of permanent residence fee)",
       },
       alternativeOptions: ["r14", "r15", "r16"],
       applicableCountries: ["All countries"],
@@ -462,7 +660,7 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
     r10: {
       id: "r10",
       title: "Start-up Visa Program",
-      description: 
+      description:
         "For entrepreneurs with innovative business ideas who can obtain support from a designated Canadian organization and meet language and education requirements.",
       requirements: [
         "Qualifying business idea",
@@ -482,7 +680,8 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
       processingTime: "12-16 months",
       cost: {
         amount: 1575,
-        currency: "CAD (principal applicant) + 1575 CAD (spouse) + 225 CAD (per child) + 85 CAD (biometrics per person)",
+        currency:
+          "CAD (principal applicant) + 1575 CAD (spouse) + 225 CAD (per child) + 85 CAD (biometrics per person)",
       },
       alternativeOptions: ["r11", "r7"],
       applicableCountries: ["All countries"],
@@ -491,7 +690,7 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
     r11: {
       id: "r11",
       title: "Self-employed Persons Program",
-      description: 
+      description:
         "For people who have relevant experience in cultural activities, athletics, or farm management and want to be self-employed in Canada.",
       requirements: [
         "Relevant experience in cultural activities, athletics, or farm management",
@@ -510,7 +709,8 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
       processingTime: "22-36 months",
       cost: {
         amount: 1575,
-        currency: "CAD (principal applicant) + 1575 CAD (spouse) + 225 CAD (per child) + 85 CAD (biometrics per person)",
+        currency:
+          "CAD (principal applicant) + 1575 CAD (spouse) + 225 CAD (per child) + 85 CAD (biometrics per person)",
       },
       alternativeOptions: ["r7", "r10"],
       applicableCountries: ["All countries"],
@@ -519,7 +719,7 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
     r12: {
       id: "r12",
       title: "Work Permit Pathways Overview",
-      description: 
+      description:
         "Guide to the different types of work permits available for working in Canada.",
       requirements: [
         "Temporary Foreign Worker Program (TFWP): Requires Labour Market Impact Assessment (LMIA)",
@@ -542,13 +742,15 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
         currency: "CAD (plus additional fees based on specific program)",
       },
       alternativeOptions: ["r3", "r4", "r5"],
-      applicableCountries: ["All countries, though eligibility varies by program"],
+      applicableCountries: [
+        "All countries, though eligibility varies by program",
+      ],
     },
 
     r13: {
       id: "r13",
       title: "Immigration Pathway Finder",
-      description: 
+      description:
         "Information to help you determine which immigration program might be best for your situation.",
       requirements: [
         "Economic immigration: Express Entry, Provincial Nominee Programs, Atlantic Immigration Program",
@@ -575,7 +777,7 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
     r14: {
       id: "r14",
       title: "Spousal/Partner Sponsorship",
-      description: 
+      description:
         "For citizens and permanent residents of Canada to sponsor their spouse, common-law partner, or conjugal partner for permanent residence.",
       requirements: [
         "Sponsor must be Canadian citizen or permanent resident",
@@ -596,7 +798,8 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
       processingTime: "12 months for 80% of applications",
       cost: {
         amount: 1050,
-        currency: "CAD (sponsorship fee + processing fee) + 85 CAD (biometrics) + 500 CAD (right of permanent residence fee)",
+        currency:
+          "CAD (sponsorship fee + processing fee) + 85 CAD (biometrics) + 500 CAD (right of permanent residence fee)",
       },
       alternativeOptions: ["r1", "r4"],
       applicableCountries: ["All countries"],
@@ -605,7 +808,7 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
     r15: {
       id: "r15",
       title: "Parents and Grandparents Sponsorship",
-      description: 
+      description:
         "For Canadian citizens and permanent residents to sponsor their parents and grandparents for permanent residence in Canada.",
       requirements: [
         "Sponsor must be Canadian citizen or permanent resident",
@@ -626,7 +829,8 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
       processingTime: "20-24 months after application is accepted",
       cost: {
         amount: 1050,
-        currency: "CAD (sponsorship fee + processing fee) + 85 CAD (biometrics) + 500 CAD (right of permanent residence fee)",
+        currency:
+          "CAD (sponsorship fee + processing fee) + 85 CAD (biometrics) + 500 CAD (right of permanent residence fee)",
       },
       alternativeOptions: ["r32", "r1"],
       applicableCountries: ["All countries"],
@@ -635,7 +839,7 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
     r16: {
       id: "r16",
       title: "Child Sponsorship",
-      description: 
+      description:
         "For Canadian citizens and permanent residents to sponsor their dependent children for permanent residence.",
       requirements: [
         "Sponsor must be Canadian citizen or permanent resident",
@@ -655,7 +859,8 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
       processingTime: "12 months for 80% of applications",
       cost: {
         amount: 150,
-        currency: "CAD (processing fee) + 85 CAD (biometrics if 14 or older) + 500 CAD (right of permanent residence fee if 22 or older)",
+        currency:
+          "CAD (processing fee) + 85 CAD (biometrics if 14 or older) + 500 CAD (right of permanent residence fee if 22 or older)",
       },
       alternativeOptions: ["r1", "r2"],
       applicableCountries: ["All countries"],
@@ -664,7 +869,7 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
     r17: {
       id: "r17",
       title: "Other Family Sponsorship",
-      description: 
+      description:
         "Information about sponsorship options for other family members not covered by spouse, child, or parent/grandparent categories.",
       requirements: [
         "Orphaned brother, sister, nephew, niece, or grandchild under 18 years old",
@@ -681,10 +886,12 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
           url: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/family-sponsorship/other-relatives.html",
         },
       ],
-      processingTime: "Varies by relationship and country of residence (typically 24+ months)",
+      processingTime:
+        "Varies by relationship and country of residence (typically 24+ months)",
       cost: {
         amount: 1050,
-        currency: "CAD (sponsorship fee + processing fee) + 85 CAD (biometrics) + 500 CAD (right of permanent residence fee)",
+        currency:
+          "CAD (sponsorship fee + processing fee) + 85 CAD (biometrics) + 500 CAD (right of permanent residence fee)",
       },
       alternativeOptions: ["r14", "r15", "r16"],
       applicableCountries: ["All countries"],
@@ -693,7 +900,7 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
     r18: {
       id: "r18",
       title: "U.S. Citizens Visitor Entry",
-      description: 
+      description:
         "U.S. citizens do not need an Electronic Travel Authorization (eTA) or visitor visa to enter Canada as tourists.",
       requirements: [
         "Valid U.S. passport (recommended) or other proof of U.S. citizenship",
@@ -722,7 +929,7 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
     r19: {
       id: "r19",
       title: "Temporary Resident Visa (Visitor Visa)",
-      description: 
+      description:
         "For citizens of visa-required countries planning to visit Canada temporarily as tourists or business visitors.",
       requirements: [
         "Valid passport",
@@ -747,14 +954,14 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
       },
       alternativeOptions: ["r1", "r6"],
       applicableCountries: [
-        "Most countries in Africa, Middle East, South and Central Asia, Eastern Europe, and several in Latin America including China, India, Pakistan, Philippines, Russia, South Africa, Brazil, and Mexico"
+        "Most countries in Africa, Middle East, South and Central Asia, Eastern Europe, and several in Latin America including China, India, Pakistan, Philippines, Russia, South Africa, Brazil, and Mexico",
       ],
     },
 
     r20: {
       id: "r20",
       title: "Visitor Visa Eligibility Check",
-      description: 
+      description:
         "Tool to determine if you need a visitor visa or electronic travel authorization (eTA) to travel to Canada.",
       requirements: [
         "Use the official Canadian government tool to check requirements based on:",
@@ -781,7 +988,7 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
     r21: {
       id: "r21",
       title: "Short-term Study for U.S. Citizens",
-      description: 
+      description:
         "U.S. citizens can study in Canada for up to 6 months without a study permit.",
       requirements: [
         "Valid U.S. passport",
@@ -809,7 +1016,7 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
     r22: {
       id: "r22",
       title: "Short-term Study with eTA",
-      description: 
+      description:
         "Citizens from visa-exempt countries can study in Canada for up to 6 months with just an eTA.",
       requirements: [
         "Valid passport from visa-exempt country",
@@ -833,18 +1040,46 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
       },
       alternativeOptions: ["r2"],
       applicableCountries: [
-        "Australia", "Austria", "Belgium", "Chile", "Czech Republic", "Denmark", "Estonia", 
-        "Finland", "France", "Germany", "Greece", "Hungary", "Iceland", "Ireland", "Italy", 
-        "Japan", "South Korea", "Latvia", "Lithuania", "Luxembourg", "Malta", "Netherlands", 
-        "New Zealand", "Norway", "Poland", "Portugal", "Slovakia", "Slovenia", "Spain", 
-        "Sweden", "Switzerland", "United Kingdom", "and others"
+        "Australia",
+        "Austria",
+        "Belgium",
+        "Chile",
+        "Czech Republic",
+        "Denmark",
+        "Estonia",
+        "Finland",
+        "France",
+        "Germany",
+        "Greece",
+        "Hungary",
+        "Iceland",
+        "Ireland",
+        "Italy",
+        "Japan",
+        "South Korea",
+        "Latvia",
+        "Lithuania",
+        "Luxembourg",
+        "Malta",
+        "Netherlands",
+        "New Zealand",
+        "Norway",
+        "Poland",
+        "Portugal",
+        "Slovakia",
+        "Slovenia",
+        "Spain",
+        "Sweden",
+        "Switzerland",
+        "United Kingdom",
+        "and others",
       ],
     },
 
     r23: {
       id: "r23",
       title: "Short-term Study with Visitor Visa",
-      description: 
+      description:
         "Citizens from visa-required countries planning to study in Canada for less than 6 months.",
       requirements: [
         "Temporary Resident Visa (visitor visa)",
@@ -867,13 +1102,15 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
         currency: "CAD (plus biometrics fee of 85 CAD)",
       },
       alternativeOptions: ["r2"],
-      applicableCountries: ["All visa-required countries including China, India, Pakistan, Brazil, etc."],
+      applicableCountries: [
+        "All visa-required countries including China, India, Pakistan, Brazil, etc.",
+      ],
     },
 
     r24: {
       id: "r24",
       title: "Student Work Program",
-      description: 
+      description:
         "Work opportunities for international students during their studies in Canada.",
       requirements: [
         "Valid study permit",
@@ -889,7 +1126,8 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
           url: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work.html",
         },
       ],
-      processingTime: "Work permission is included with study permit if eligible",
+      processingTime:
+        "Work permission is included with study permit if eligible",
       cost: {
         amount: 0,
         currency: "CAD (included with study permit)",
@@ -901,7 +1139,7 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
     r25: {
       id: "r25",
       title: "Co-op Work Permit",
-      description: 
+      description:
         "For international students who need to complete a co-op or internship as part of their study program.",
       requirements: [
         "Valid study permit",
@@ -929,7 +1167,7 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
     r26: {
       id: "r26",
       title: "CUSMA/NAFTA Professional Work Permit",
-      description: 
+      description:
         "Simplified work permit process for citizens of the United States and Mexico in specific professions under the Canada-United States-Mexico Agreement.",
       requirements: [
         "Citizenship in US or Mexico",
@@ -947,7 +1185,8 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
           url: "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/operational-bulletins-manuals/temporary-residents/foreign-workers/international-free-trade-agreements/north-american.html",
         },
       ],
-      processingTime: "Same day at port of entry (US citizens) or 2-8 weeks in advance (Mexican citizens)",
+      processingTime:
+        "Same day at port of entry (US citizens) or 2-8 weeks in advance (Mexican citizens)",
       cost: {
         amount: 155,
         currency: "CAD (plus 85 CAD biometrics fee for Mexicans)",
@@ -959,7 +1198,7 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
     r27: {
       id: "r27",
       title: "Intra-Company Transfer Work Permit",
-      description: 
+      description:
         "For executives, managers, or employees with specialized knowledge transferring to a Canadian branch of their company.",
       requirements: [
         "Employed by multinational company outside Canada",
@@ -989,7 +1228,7 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
     r28: {
       id: "r28",
       title: "Job Search Information",
-      description: 
+      description:
         "Guidance for finding employment opportunities in Canada that could lead to work permit eligibility.",
       requirements: [
         "Most work permits require a job offer from a Canadian employer",
@@ -1022,7 +1261,7 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
     r29: {
       id: "r29",
       title: "Transit for U.S. Citizens",
-      description: 
+      description:
         "U.S. citizens do not need any special documentation to transit through Canadian airports.",
       requirements: [
         "Valid U.S. passport",
@@ -1049,7 +1288,7 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
     r30: {
       id: "r30",
       title: "Transit Without Visa Program",
-      description: 
+      description:
         "Allows citizens of certain countries to transit through Canadian airports without a visa when traveling to or from the United States.",
       requirements: [
         "Citizenship in an eligible country (Indonesia, Thailand, Taiwan, Philippines, etc.)",
@@ -1073,16 +1312,28 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
       },
       alternativeOptions: ["r31", "r19"],
       applicableCountries: [
-        "Indonesia", "Thailand", "Taiwan", "Philippines", "Vietnam", "Samoa", "Fiji", 
-        "Nauru", "Solomon Islands", "Papua New Guinea", "Tonga", "Kiribati", "Tuvalu", 
-        "Vanuatu", "Others with specific requirements"
+        "Indonesia",
+        "Thailand",
+        "Taiwan",
+        "Philippines",
+        "Vietnam",
+        "Samoa",
+        "Fiji",
+        "Nauru",
+        "Solomon Islands",
+        "Papua New Guinea",
+        "Tonga",
+        "Kiribati",
+        "Tuvalu",
+        "Vanuatu",
+        "Others with specific requirements",
       ],
     },
 
     r31: {
       id: "r31",
       title: "Transit Visa",
-      description: 
+      description:
         "Required for citizens of visa-required countries who will transit through a Canadian airport and either leave the airport or are not eligible for the Transit Without Visa Program.",
       requirements: [
         "Valid passport",
@@ -1105,13 +1356,15 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
         currency: "CAD (plus biometrics fee of 85 CAD)",
       },
       alternativeOptions: ["r19", "r30"],
-      applicableCountries: ["All countries requiring visitor visas that are not eligible for Transit Without Visa Program"],
+      applicableCountries: [
+        "All countries requiring visitor visas that are not eligible for Transit Without Visa Program",
+      ],
     },
 
     r32: {
       id: "r32",
       title: "Super Visa for Parents and Grandparents",
-      description: 
+      description:
         "Multiple-entry visa allowing parents and grandparents of Canadian citizens or permanent residents to visit for up to 2 years at a time.",
       requirements: [
         "Be the parent or grandparent of a Canadian citizen or permanent resident",
@@ -1142,6 +1395,7 @@ export const canadaVisaDecisionTree: VisaDecisionTree = {
   metadata: {
     version: "1.0.0",
     lastUpdated: "2025-03-19",
+    author: "Max",
     countries: ["Canada"],
   },
 };

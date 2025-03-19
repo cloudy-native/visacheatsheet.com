@@ -4,6 +4,7 @@ import { canadaVisaDecisionTree } from "./canada";
 import { chinaVisaDecisionTree } from "./china";
 import { indiaVisaDecisionTree } from "./india";
 import { japanVisaDecisionTree } from "./japan";
+import { VisaDecisionTree } from "./model";
 import { russiaVisaDecisionTree } from "./russia";
 import { schengenVisaDecisionTree } from "./schengen";
 import { southafricaVisaDecisionTree } from "./southafrica";
@@ -11,78 +12,85 @@ import { thaiVisaDecisionTree } from "./thailand";
 import { ukVisaDecisionTree } from "./uk";
 import { usVisaDecisionTree } from "./us";
 
+export type Country = {
+  id: string;
+  name: string;
+  countryCode: string;
+  decisionTree: VisaDecisionTree;
+};
+
 // Country data with flags and names
-export const visas = [
+export const visas: Country[] = [
   {
     id: "schengen",
     name: "Schengen Area",
-    flag: "https://flagcdn.com/w160/eu.png",
+    countryCode: "eu",
     decisionTree: schengenVisaDecisionTree,
   },
   {
     id: "uk",
     name: "United Kingdom",
-    flag: "https://flagcdn.com/w160/gb.png",
+    countryCode: "gb",
     decisionTree: ukVisaDecisionTree,
   },
   {
     id: "us",
     name: "United States",
-    flag: "https://flagcdn.com/w160/us.png",
+    countryCode: "us",
     decisionTree: usVisaDecisionTree,
   },
   {
     id: "australia",
     name: "Australia",
-    flag: "https://flagcdn.com/w160/au.png",
+    countryCode: "au",
     decisionTree: australiaVisaDecisionTree,
   },
   {
     id: "thailand",
     name: "Thailand",
-    flag: "https://flagcdn.com/w160/th.png",
+    countryCode: "th",
     decisionTree: thaiVisaDecisionTree,
   },
   {
     id: "india",
     name: "India",
-    flag: "https://flagcdn.com/w160/in.png",
+    countryCode: "in",
     decisionTree: indiaVisaDecisionTree,
   },
   {
     id: "china",
     name: "China",
-    flag: "https://flagcdn.com/w160/cn.png",
+    countryCode: "cn",
     decisionTree: chinaVisaDecisionTree,
   },
   {
     id: "canada",
     name: "Canada",
-    flag: "https://flagcdn.com/w160/ca.png",
+    countryCode: "ca",
     decisionTree: canadaVisaDecisionTree,
   },
   {
     id: "russia",
     name: "Russia",
-    flag: "https://flagcdn.com/w160/ru.png",
+    countryCode: "ru",
     decisionTree: russiaVisaDecisionTree,
   },
   {
     id: "brazil",
     name: "Brazil",
-    flag: "https://flagcdn.com/w160/br.png",
+    countryCode: "br",
     decisionTree: brazilVisaDecisionTree,
   },
   {
     id: "southafrica",
     name: "South Africa",
-    flag: "https://flagcdn.com/w160/za.png",
+    countryCode: "za",
     decisionTree: southafricaVisaDecisionTree,
   },
   {
     id: "japan",
     name: "Japan",
-    flag: "https://flagcdn.com/w160/jp.png",
+    countryCode: "jp",
     decisionTree: japanVisaDecisionTree,
   },
 ];

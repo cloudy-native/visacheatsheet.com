@@ -1,4 +1,4 @@
-import { VisaDecisionTree } from './model';
+import { VisaDecisionTree } from "./model";
 
 export const usVisaDecisionTree: VisaDecisionTree = {
   startQuestionId: "q1",
@@ -34,11 +34,23 @@ export const usVisaDecisionTree: VisaDecisionTree = {
       text: "What type of work will you be doing in the United States?",
       answerType: "single",
       options: [
-        { id: "a1", text: "Temporary work (contract or employment)", nextQuestionId: "q10" },
+        {
+          id: "a1",
+          text: "Temporary work (contract or employment)",
+          nextQuestionId: "q10",
+        },
         { id: "a2", text: "Intra-company transfer", nextQuestionId: "r1" },
-        { id: "a3", text: "Person with extraordinary ability", nextQuestionId: "r2" },
+        {
+          id: "a3",
+          text: "Person with extraordinary ability",
+          nextQuestionId: "r2",
+        },
         { id: "a4", text: "Seasonal/Agricultural work", nextQuestionId: "r3" },
-        { id: "a5", text: "Business meetings/conferences only (no work)", nextQuestionId: "q8" },
+        {
+          id: "a5",
+          text: "Business meetings/conferences only (no work)",
+          nextQuestionId: "q8",
+        },
       ],
       helpText: "Different work activities require different visa types",
     },
@@ -48,10 +60,22 @@ export const usVisaDecisionTree: VisaDecisionTree = {
       text: "What type of educational program will you be attending?",
       answerType: "single",
       options: [
-        { id: "a1", text: "Academic studies (university/college)", nextQuestionId: "r4" },
-        { id: "a2", text: "Vocational/non-academic institution", nextQuestionId: "r5" },
+        {
+          id: "a1",
+          text: "Academic studies (university/college)",
+          nextQuestionId: "r4",
+        },
+        {
+          id: "a2",
+          text: "Vocational/non-academic institution",
+          nextQuestionId: "r5",
+        },
         { id: "a3", text: "Exchange program/research", nextQuestionId: "r6" },
-        { id: "a4", text: "Short courses or seminars (less than 90 days)", nextQuestionId: "q8" },
+        {
+          id: "a4",
+          text: "Short courses or seminars (less than 90 days)",
+          nextQuestionId: "q8",
+        },
       ],
       helpText: "Your program type determines the visa category",
     },
@@ -63,11 +87,24 @@ export const usVisaDecisionTree: VisaDecisionTree = {
       options: [
         { id: "a1", text: "Spouse of US citizen", nextQuestionId: "r7" },
         { id: "a2", text: "Fiancé(e) of US citizen", nextQuestionId: "r8" },
-        { id: "a3", text: "Immediate relative (child, parent) of US citizen", nextQuestionId: "r9" },
-        { id: "a4", text: "Other family member of US citizen or resident", nextQuestionId: "r10" },
-        { id: "a5", text: "Just visiting family (no immigration intent)", nextQuestionId: "q8" },
+        {
+          id: "a3",
+          text: "Immediate relative (child, parent) of US citizen",
+          nextQuestionId: "r9",
+        },
+        {
+          id: "a4",
+          text: "Other family member of US citizen or resident",
+          nextQuestionId: "r10",
+        },
+        {
+          id: "a5",
+          text: "Just visiting family (no immigration intent)",
+          nextQuestionId: "q8",
+        },
       ],
-      helpText: "Your relationship affects your eligibility for family-based visas",
+      helpText:
+        "Your relationship affects your eligibility for family-based visas",
     },
 
     q6: {
@@ -75,9 +112,21 @@ export const usVisaDecisionTree: VisaDecisionTree = {
       text: "What type of investment or trade activity?",
       answerType: "single",
       options: [
-        { id: "a1", text: "Substantial business investment", nextQuestionId: "r11" },
-        { id: "a2", text: "Treaty trader (import/export business)", nextQuestionId: "r12" },
-        { id: "a3", text: "Exploring business opportunities only", nextQuestionId: "q8" },
+        {
+          id: "a1",
+          text: "Substantial business investment",
+          nextQuestionId: "r11",
+        },
+        {
+          id: "a2",
+          text: "Treaty trader (import/export business)",
+          nextQuestionId: "r12",
+        },
+        {
+          id: "a3",
+          text: "Exploring business opportunities only",
+          nextQuestionId: "q8",
+        },
       ],
       helpText: "Investment amount and activities determine the visa type",
     },
@@ -89,7 +138,11 @@ export const usVisaDecisionTree: VisaDecisionTree = {
       options: [
         { id: "a1", text: "Work and travel programs", nextQuestionId: "r13" },
         { id: "a2", text: "Au pair or camp counselor", nextQuestionId: "r13" },
-        { id: "a3", text: "Government or international agency related", nextQuestionId: "r14" },
+        {
+          id: "a3",
+          text: "Government or international agency related",
+          nextQuestionId: "r14",
+        },
         { id: "a4", text: "Religious activities", nextQuestionId: "r15" },
       ],
       helpText: "Different exchange programs have different visa requirements",
@@ -103,7 +156,8 @@ export const usVisaDecisionTree: VisaDecisionTree = {
         { id: "a1", text: "Yes", nextQuestionId: "r16" },
         { id: "a2", text: "No", nextQuestionId: "r17" },
       ],
-      helpText: "Citizens of certain countries can travel to the US without a visa for short stays",
+      helpText:
+        "Citizens of certain countries can travel to the US without a visa for short stays",
     },
 
     q9: {
@@ -116,7 +170,8 @@ export const usVisaDecisionTree: VisaDecisionTree = {
         { id: "a3", text: "Medical treatment", nextQuestionId: "r18" },
         { id: "a4", text: "Retirement/long-term stay", nextQuestionId: "r19" },
       ],
-      helpText: "The US generally doesn't have long-term tourist visas - this affects your options",
+      helpText:
+        "The US generally doesn't have long-term tourist visas - this affects your options",
     },
 
     q10: {
@@ -124,12 +179,25 @@ export const usVisaDecisionTree: VisaDecisionTree = {
       text: "What is your level of skill or profession?",
       answerType: "single",
       options: [
-        { id: "a1", text: "Specialty occupation requiring at least a bachelor's degree", nextQuestionId: "r20" },
-        { id: "a2", text: "Professional with advanced degree", nextQuestionId: "r21" },
-        { id: "a3", text: "Skilled or unskilled labor for temporary work", nextQuestionId: "r22" },
+        {
+          id: "a1",
+          text: "Specialty occupation requiring at least a bachelor's degree",
+          nextQuestionId: "r20",
+        },
+        {
+          id: "a2",
+          text: "Professional with advanced degree",
+          nextQuestionId: "r21",
+        },
+        {
+          id: "a3",
+          text: "Skilled or unskilled labor for temporary work",
+          nextQuestionId: "r22",
+        },
         { id: "a4", text: "Nurse or healthcare worker", nextQuestionId: "r23" },
       ],
-      helpText: "Your profession and education level determine your work visa category",
+      helpText:
+        "Your profession and education level determine your work visa category",
     },
   },
 
@@ -137,7 +205,7 @@ export const usVisaDecisionTree: VisaDecisionTree = {
     r1: {
       id: "r1",
       title: "L-1 Visa (Intracompany Transferee)",
-      description: 
+      description:
         "For employees transferring from a foreign office to a US office of the same company.",
       requirements: [
         "Current employment with foreign company for at least 1 year in the past 3 years",
@@ -156,7 +224,8 @@ export const usVisaDecisionTree: VisaDecisionTree = {
           url: "https://travel.state.gov/content/travel/en/us-visas/employment/visas-intracompany-transferees-l.html",
         },
       ],
-      processingTime: "2-3 months standard; 15 calendar days with premium processing",
+      processingTime:
+        "2-3 months standard; 15 calendar days with premium processing",
       cost: {
         amount: 960,
         currency: "USD (plus additional fees)",
@@ -168,7 +237,7 @@ export const usVisaDecisionTree: VisaDecisionTree = {
     r2: {
       id: "r2",
       title: "O-1 Visa (Extraordinary Ability)",
-      description: 
+      description:
         "For individuals with extraordinary ability in sciences, arts, education, business, or athletics.",
       requirements: [
         "Evidence of extraordinary ability (national or international recognition)",
@@ -183,7 +252,8 @@ export const usVisaDecisionTree: VisaDecisionTree = {
           url: "https://www.uscis.gov/working-in-the-united-states/temporary-workers/o-1-visa-individuals-with-extraordinary-ability-or-achievement",
         },
       ],
-      processingTime: "2-3 months standard; 15 calendar days with premium processing",
+      processingTime:
+        "2-3 months standard; 15 calendar days with premium processing",
       cost: {
         amount: 960,
         currency: "USD (plus additional fees)",
@@ -195,7 +265,7 @@ export const usVisaDecisionTree: VisaDecisionTree = {
     r3: {
       id: "r3",
       title: "H-2A/H-2B Visa (Seasonal Workers)",
-      description: 
+      description:
         "For temporary agricultural (H-2A) or non-agricultural (H-2B) workers to fill seasonal jobs.",
       requirements: [
         "Job offer from US employer for seasonal or temporary work",
@@ -226,7 +296,7 @@ export const usVisaDecisionTree: VisaDecisionTree = {
     r4: {
       id: "r4",
       title: "F-1 Visa (Academic Student)",
-      description: 
+      description:
         "For individuals pursuing academic studies at a US college, university, or language program.",
       requirements: [
         "Acceptance at a Student and Exchange Visitor Program (SEVP)-certified school",
@@ -253,7 +323,7 @@ export const usVisaDecisionTree: VisaDecisionTree = {
     r5: {
       id: "r5",
       title: "M-1 Visa (Vocational Student)",
-      description: 
+      description:
         "For students attending vocational or other recognized non-academic institutions.",
       requirements: [
         "Acceptance at an M-approved school",
@@ -280,7 +350,7 @@ export const usVisaDecisionTree: VisaDecisionTree = {
     r6: {
       id: "r6",
       title: "J-1 Visa (Exchange Visitor)",
-      description: 
+      description:
         "For educational and cultural exchange programs, including research scholars, professors, and students.",
       requirements: [
         "Sponsorship by a designated exchange program",
@@ -308,7 +378,7 @@ export const usVisaDecisionTree: VisaDecisionTree = {
     r7: {
       id: "r7",
       title: "IR-1/CR-1 Visa (Spouse of US Citizen)",
-      description: 
+      description:
         "For foreign spouses of US citizens to immigrate to the United States.",
       requirements: [
         "Legal marriage to a US citizen",
@@ -337,7 +407,7 @@ export const usVisaDecisionTree: VisaDecisionTree = {
     r8: {
       id: "r8",
       title: "K-1 Visa (Fiancé(e) of US Citizen)",
-      description: 
+      description:
         "For fiancé(e)s of US citizens to enter the US for marriage and subsequent permanent residence.",
       requirements: [
         "Intent to marry a US citizen within 90 days of arrival",
@@ -365,7 +435,7 @@ export const usVisaDecisionTree: VisaDecisionTree = {
     r9: {
       id: "r9",
       title: "IR-2/IR-5 Visa (Immediate Relative of US Citizen)",
-      description: 
+      description:
         "For children or parents of US citizens to immigrate to the United States.",
       requirements: [
         "For parents: US citizen child must be at least 21 years old",
@@ -394,7 +464,7 @@ export const usVisaDecisionTree: VisaDecisionTree = {
     r10: {
       id: "r10",
       title: "Family Preference Immigrant Visa",
-      description: 
+      description:
         "For more distant relatives of US citizens or relatives of permanent residents with annual quotas.",
       requirements: [
         "Qualifying family relationship with US citizen or permanent resident",
@@ -423,7 +493,7 @@ export const usVisaDecisionTree: VisaDecisionTree = {
     r11: {
       id: "r11",
       title: "EB-5 Visa (Immigrant Investor)",
-      description: 
+      description:
         "For investors who make a substantial capital investment in a US business that creates jobs.",
       requirements: [
         "Investment of $1.05 million (or $800,000 in targeted employment area)",
@@ -451,7 +521,7 @@ export const usVisaDecisionTree: VisaDecisionTree = {
     r12: {
       id: "r12",
       title: "E-1/E-2 Visa (Treaty Trader/Investor)",
-      description: 
+      description:
         "For nationals of treaty countries who engage in substantial trade (E-1) or investment (E-2) in the US.",
       requirements: [
         "Must be national of a treaty country",
@@ -478,7 +548,7 @@ export const usVisaDecisionTree: VisaDecisionTree = {
     r13: {
       id: "r13",
       title: "J-1 Visa (Exchange Visitor - Work Programs)",
-      description: 
+      description:
         "For participants in work-based exchange programs, including Summer Work Travel, Au Pair, and Camp Counselor.",
       requirements: [
         "Sponsorship by a designated exchange program",
@@ -506,7 +576,7 @@ export const usVisaDecisionTree: VisaDecisionTree = {
     r14: {
       id: "r14",
       title: "A/G Visa (Diplomats and Government Officials)",
-      description: 
+      description:
         "For diplomats, government officials, and employees of international organizations.",
       requirements: [
         "Official diplomatic or governmental status",
@@ -532,7 +602,7 @@ export const usVisaDecisionTree: VisaDecisionTree = {
     r15: {
       id: "r15",
       title: "R-1 Visa (Religious Worker)",
-      description: 
+      description:
         "For ministers and religious workers coming to the US for religious work.",
       requirements: [
         "Membership in a religious denomination for at least 2 years",
@@ -547,7 +617,8 @@ export const usVisaDecisionTree: VisaDecisionTree = {
           url: "https://www.uscis.gov/working-in-the-united-states/temporary-workers/r-1-temporary-religious-workers",
         },
       ],
-      processingTime: "2-3 months standard; 15 calendar days with premium processing",
+      processingTime:
+        "2-3 months standard; 15 calendar days with premium processing",
       cost: {
         amount: 960,
         currency: "USD (plus additional fees)",
@@ -559,7 +630,7 @@ export const usVisaDecisionTree: VisaDecisionTree = {
     r16: {
       id: "r16",
       title: "ESTA (Visa Waiver Program)",
-      description: 
+      description:
         "For citizens of VWP countries to visit the US for tourism or business for up to 90 days without a visa.",
       requirements: [
         "Citizenship in a Visa Waiver Program country",
@@ -586,20 +657,54 @@ export const usVisaDecisionTree: VisaDecisionTree = {
       },
       alternativeOptions: ["r17"],
       applicableCountries: [
-        "Andorra", "Australia", "Austria", "Belgium", "Brunei", "Chile", "Croatia", 
-        "Czech Republic", "Denmark", "Estonia", "Finland", "France", "Germany", 
-        "Greece", "Hungary", "Iceland", "Ireland", "Italy", "Japan", "Latvia", 
-        "Liechtenstein", "Lithuania", "Luxembourg", "Malta", "Monaco", "Netherlands", 
-        "New Zealand", "Norway", "Poland", "Portugal", "San Marino", "Singapore", 
-        "Slovakia", "Slovenia", "South Korea", "Spain", "Sweden", "Switzerland", 
-        "Taiwan", "United Kingdom", "and others"
+        "Andorra",
+        "Australia",
+        "Austria",
+        "Belgium",
+        "Brunei",
+        "Chile",
+        "Croatia",
+        "Czech Republic",
+        "Denmark",
+        "Estonia",
+        "Finland",
+        "France",
+        "Germany",
+        "Greece",
+        "Hungary",
+        "Iceland",
+        "Ireland",
+        "Italy",
+        "Japan",
+        "Latvia",
+        "Liechtenstein",
+        "Lithuania",
+        "Luxembourg",
+        "Malta",
+        "Monaco",
+        "Netherlands",
+        "New Zealand",
+        "Norway",
+        "Poland",
+        "Portugal",
+        "San Marino",
+        "Singapore",
+        "Slovakia",
+        "Slovenia",
+        "South Korea",
+        "Spain",
+        "Sweden",
+        "Switzerland",
+        "Taiwan",
+        "United Kingdom",
+        "and others",
       ],
     },
 
     r17: {
       id: "r17",
       title: "B-1/B-2 Visa (Business/Tourist)",
-      description: 
+      description:
         "For temporary visits to the US for business (B-1), tourism, pleasure, or medical treatment (B-2).",
       requirements: [
         "Proof of ties to home country (intent to return)",
@@ -625,7 +730,7 @@ export const usVisaDecisionTree: VisaDecisionTree = {
     r18: {
       id: "r18",
       title: "B-2 Visa (Medical Treatment)",
-      description: 
+      description:
         "For visitors seeking medical treatment in the United States.",
       requirements: [
         "Letter from physician explaining medical condition",
@@ -652,7 +757,7 @@ export const usVisaDecisionTree: VisaDecisionTree = {
     r19: {
       id: "r19",
       title: "No Specific Retirement Visa",
-      description: 
+      description:
         "The US doesn't offer a specific retirement visa. Alternative options may include investment visas, family-based visas, or B-2 tourist visas with regular renewals.",
       requirements: [
         "No specific retirement visa exists",
@@ -678,7 +783,7 @@ export const usVisaDecisionTree: VisaDecisionTree = {
     r20: {
       id: "r20",
       title: "H-1B Visa (Specialty Occupation)",
-      description: 
+      description:
         "For professionals working in specialty occupations that require theoretical and practical application of specialized knowledge.",
       requirements: [
         "Job must qualify as a specialty occupation",
@@ -694,7 +799,8 @@ export const usVisaDecisionTree: VisaDecisionTree = {
           url: "https://www.uscis.gov/working-in-the-united-states/temporary-workers/h-1b-specialty-occupations",
         },
       ],
-      processingTime: "2-3 months standard; 15 calendar days with premium processing",
+      processingTime:
+        "2-3 months standard; 15 calendar days with premium processing",
       cost: {
         amount: 960,
         currency: "USD (plus additional fees)",
@@ -706,7 +812,7 @@ export const usVisaDecisionTree: VisaDecisionTree = {
     r21: {
       id: "r21",
       title: "EB-2 Visa (Advanced Degree Professionals)",
-      description: 
+      description:
         "For professionals with advanced degrees or exceptional ability seeking permanent residence.",
       requirements: [
         "Advanced degree (beyond bachelor's) or exceptional ability",
@@ -734,7 +840,7 @@ export const usVisaDecisionTree: VisaDecisionTree = {
     r22: {
       id: "r22",
       title: "H-2B Visa (Temporary Non-Agricultural Workers)",
-      description: 
+      description:
         "For temporary non-agricultural workers filling jobs due to a one-time or seasonal need.",
       requirements: [
         "Job offer for temporary non-agricultural work",
@@ -762,7 +868,7 @@ export const usVisaDecisionTree: VisaDecisionTree = {
     r23: {
       id: "r23",
       title: "H-1C/TN Visa (Healthcare Professionals)",
-      description: 
+      description:
         "For qualified healthcare professionals, especially nurses and physicians.",
       requirements: [
         "Licensed healthcare professional (specific requirements vary by profession)",
@@ -778,19 +884,23 @@ export const usVisaDecisionTree: VisaDecisionTree = {
           url: "https://www.uscis.gov/working-in-the-united-states/temporary-workers/h-1b-specialty-occupations",
         },
       ],
-      processingTime: "2-3 months standard; 15 calendar days with premium processing",
+      processingTime:
+        "2-3 months standard; 15 calendar days with premium processing",
       cost: {
         amount: 960,
         currency: "USD (plus additional fees)",
       },
       alternativeOptions: ["r20", "r22"],
-      applicableCountries: ["All countries (H-1C); Canada and Mexico only (TN)"],
+      applicableCountries: [
+        "All countries (H-1C); Canada and Mexico only (TN)",
+      ],
     },
   },
 
   metadata: {
     version: "1.0.0",
     lastUpdated: "2025-03-19",
+    author: "Max",
     countries: ["United States"],
   },
 };

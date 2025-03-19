@@ -1,4 +1,4 @@
-import { VisaDecisionTree } from './model';
+import { VisaDecisionTree } from "./model";
 
 export const indiaVisaDecisionTree: VisaDecisionTree = {
   startQuestionId: "q1",
@@ -38,12 +38,29 @@ export const indiaVisaDecisionTree: VisaDecisionTree = {
       text: "What is the nature of your business/conference visit?",
       answerType: "single",
       options: [
-        { id: "a1", text: "Business meetings/discussions", nextQuestionId: "q9" },
-        { id: "a2", text: "Attending conference/seminar", nextQuestionId: "q9" },
-        { id: "a3", text: "Establishing business/industrial venture", nextQuestionId: "r2" },
-        { id: "a4", text: "Sale/purchase of industrial/commercial products", nextQuestionId: "q9" },
+        {
+          id: "a1",
+          text: "Business meetings/discussions",
+          nextQuestionId: "q9",
+        },
+        {
+          id: "a2",
+          text: "Attending conference/seminar",
+          nextQuestionId: "q9",
+        },
+        {
+          id: "a3",
+          text: "Establishing business/industrial venture",
+          nextQuestionId: "r2",
+        },
+        {
+          id: "a4",
+          text: "Sale/purchase of industrial/commercial products",
+          nextQuestionId: "q9",
+        },
       ],
-      helpText: "The specific nature of business activity determines the appropriate visa",
+      helpText:
+        "The specific nature of business activity determines the appropriate visa",
     },
 
     q4: {
@@ -52,10 +69,15 @@ export const indiaVisaDecisionTree: VisaDecisionTree = {
       answerType: "single",
       options: [
         { id: "a1", text: "Yes, for myself", nextQuestionId: "r4" },
-        { id: "a2", text: "Yes, as an attendant/companion", nextQuestionId: "r4" },
+        {
+          id: "a2",
+          text: "Yes, as an attendant/companion",
+          nextQuestionId: "r4",
+        },
         { id: "a3", text: "No, for other reasons", nextQuestionId: "q2" },
       ],
-      helpText: "Medical visas are for those seeking treatment or accompanying patients",
+      helpText:
+        "Medical visas are for those seeking treatment or accompanying patients",
     },
 
     q5: {
@@ -63,8 +85,16 @@ export const indiaVisaDecisionTree: VisaDecisionTree = {
       text: "What type of educational program will you be pursuing?",
       answerType: "single",
       options: [
-        { id: "a1", text: "Regular academic course (degree/diploma)", nextQuestionId: "q6" },
-        { id: "a2", text: "Short-term course (less than 6 months)", nextQuestionId: "r6" },
+        {
+          id: "a1",
+          text: "Regular academic course (degree/diploma)",
+          nextQuestionId: "q6",
+        },
+        {
+          id: "a2",
+          text: "Short-term course (less than 6 months)",
+          nextQuestionId: "r6",
+        },
         { id: "a3", text: "Research work", nextQuestionId: "r7" },
         { id: "a4", text: "Internship/training program", nextQuestionId: "r6" },
       ],
@@ -76,10 +106,15 @@ export const indiaVisaDecisionTree: VisaDecisionTree = {
       text: "Have you secured admission to an Indian educational institution?",
       answerType: "single",
       options: [
-        { id: "a1", text: "Yes, I have a confirmed admission", nextQuestionId: "r5" },
+        {
+          id: "a1",
+          text: "Yes, I have a confirmed admission",
+          nextQuestionId: "r5",
+        },
         { id: "a2", text: "No, I'm still applying", nextQuestionId: "r9" },
       ],
-      helpText: "Student visas require confirmed admission to a recognized institution",
+      helpText:
+        "Student visas require confirmed admission to a recognized institution",
     },
 
     q7: {
@@ -87,10 +122,22 @@ export const indiaVisaDecisionTree: VisaDecisionTree = {
       text: "What type of employment will you be engaged in?",
       answerType: "single",
       options: [
-        { id: "a1", text: "Working for an Indian company/organization", nextQuestionId: "r10" },
-        { id: "a2", text: "Working for a foreign company in India", nextQuestionId: "r10" },
+        {
+          id: "a1",
+          text: "Working for an Indian company/organization",
+          nextQuestionId: "r10",
+        },
+        {
+          id: "a2",
+          text: "Working for a foreign company in India",
+          nextQuestionId: "r10",
+        },
         { id: "a3", text: "Volunteer work (unpaid)", nextQuestionId: "r12" },
-        { id: "a4", text: "Digital nomad/remote work for non-Indian employer", nextQuestionId: "r14" },
+        {
+          id: "a4",
+          text: "Digital nomad/remote work for non-Indian employer",
+          nextQuestionId: "r14",
+        },
       ],
       helpText: "Employment visa requirements vary based on type of work",
     },
@@ -100,7 +147,11 @@ export const indiaVisaDecisionTree: VisaDecisionTree = {
       text: "What is your nationality?",
       answerType: "single",
       options: [
-        { id: "a1", text: "Eligible for eVisa (US, UK, Canada, etc.)", nextQuestionId: "r1" },
+        {
+          id: "a1",
+          text: "Eligible for eVisa (US, UK, Canada, etc.)",
+          nextQuestionId: "r1",
+        },
         { id: "a2", text: "Not eligible for eVisa", nextQuestionId: "r15" },
         { id: "a3", text: "Not sure", nextQuestionId: "r16" },
       ],
@@ -124,12 +175,29 @@ export const indiaVisaDecisionTree: VisaDecisionTree = {
       text: "What is your relationship with the person in India?",
       answerType: "single",
       options: [
-        { id: "a1", text: "Spouse of Indian citizen/OCI cardholder", nextQuestionId: "r11" },
-        { id: "a2", text: "Child of Indian citizen/OCI cardholder", nextQuestionId: "r11" },
-        { id: "a3", text: "Parent of Indian citizen/OCI cardholder", nextQuestionId: "r11" },
-        { id: "a4", text: "Other relative (not immediate family)", nextQuestionId: "r1" },
+        {
+          id: "a1",
+          text: "Spouse of Indian citizen/OCI cardholder",
+          nextQuestionId: "r11",
+        },
+        {
+          id: "a2",
+          text: "Child of Indian citizen/OCI cardholder",
+          nextQuestionId: "r11",
+        },
+        {
+          id: "a3",
+          text: "Parent of Indian citizen/OCI cardholder",
+          nextQuestionId: "r11",
+        },
+        {
+          id: "a4",
+          text: "Other relative (not immediate family)",
+          nextQuestionId: "r1",
+        },
       ],
-      helpText: "Family relation determines eligibility for specific visa types",
+      helpText:
+        "Family relation determines eligibility for specific visa types",
     },
   },
 
@@ -137,7 +205,7 @@ export const indiaVisaDecisionTree: VisaDecisionTree = {
     r1: {
       id: "r1",
       title: "Tourist Visa / e-Tourist Visa",
-      description: 
+      description:
         "For foreigners who want to visit India for tourism, recreation, sightseeing, meeting friends/relatives, or attending yoga programs.",
       requirements: [
         "Valid passport with at least 6 months validity and 2 blank pages",
@@ -158,19 +226,23 @@ export const indiaVisaDecisionTree: VisaDecisionTree = {
           url: "https://indianvisaonline.gov.in/visa/",
         },
       ],
-      processingTime: "E-visa: 3-5 business days; Regular visa: 5-7 business days (varies by country)",
+      processingTime:
+        "E-visa: 3-5 business days; Regular visa: 5-7 business days (varies by country)",
       cost: {
         amount: 25,
-        currency: "USD (for e-Tourist visa up to 30 days); varies for regular tourist visa",
+        currency:
+          "USD (for e-Tourist visa up to 30 days); varies for regular tourist visa",
       },
       alternativeOptions: ["r2", "r12"],
-      applicableCountries: ["Most countries are eligible for e-Tourist visa except certain restricted nationalities"],
+      applicableCountries: [
+        "Most countries are eligible for e-Tourist visa except certain restricted nationalities",
+      ],
     },
 
     r2: {
       id: "r2",
       title: "Business Visa / e-Business Visa",
-      description: 
+      description:
         "For foreigners coming to India for business activities like attending meetings, conferences, establishing industrial/business ventures, etc.",
       requirements: [
         "Valid passport with at least 6 months validity and 2 blank pages",
@@ -191,19 +263,22 @@ export const indiaVisaDecisionTree: VisaDecisionTree = {
           url: "https://indianvisaonline.gov.in/visa/",
         },
       ],
-      processingTime: "E-visa: 3-5 business days; Regular visa: 7-10 business days (varies by country)",
+      processingTime:
+        "E-visa: 3-5 business days; Regular visa: 7-10 business days (varies by country)",
       cost: {
         amount: 80,
         currency: "USD (for e-Business visa); varies for regular business visa",
       },
       alternativeOptions: ["r1", "r10"],
-      applicableCountries: ["Most countries are eligible for e-Business visa except certain restricted nationalities"],
+      applicableCountries: [
+        "Most countries are eligible for e-Business visa except certain restricted nationalities",
+      ],
     },
 
     r3: {
       id: "r3",
       title: "Long-Term Tourist Visa",
-      description: 
+      description:
         "For extended tourism/recreation stays in India beyond the typical short-term tourist visa duration.",
       requirements: [
         "Valid passport with at least 6 months validity and 2 blank pages",
@@ -226,13 +301,15 @@ export const indiaVisaDecisionTree: VisaDecisionTree = {
         currency: "USD (varies by nationality and duration)",
       },
       alternativeOptions: ["r1", "r11"],
-      applicableCountries: ["Most countries, though restrictions may apply for certain nationalities"],
+      applicableCountries: [
+        "Most countries, though restrictions may apply for certain nationalities",
+      ],
     },
 
     r4: {
       id: "r4",
       title: "Medical Visa / Medical Attendant Visa",
-      description: 
+      description:
         "For foreigners seeking medical treatment in India or accompanying a patient as an attendant/companion.",
       requirements: [
         "Valid passport with at least 6 months validity and 2 blank pages",
@@ -253,19 +330,22 @@ export const indiaVisaDecisionTree: VisaDecisionTree = {
           url: "https://indianvisaonline.gov.in/visa/",
         },
       ],
-      processingTime: "E-visa: 3-5 business days; Regular visa: 5-7 business days (expedited processing available)",
+      processingTime:
+        "E-visa: 3-5 business days; Regular visa: 5-7 business days (expedited processing available)",
       cost: {
         amount: 80,
         currency: "USD (for e-Medical visa); varies for regular medical visa",
       },
       alternativeOptions: ["r1"],
-      applicableCountries: ["Most countries are eligible except certain restricted nationalities"],
+      applicableCountries: [
+        "Most countries are eligible except certain restricted nationalities",
+      ],
     },
 
     r5: {
       id: "r5",
       title: "Student Visa",
-      description: 
+      description:
         "For foreigners coming to study at recognized educational institutions in India for regular academic courses.",
       requirements: [
         "Valid passport with at least 6 months validity and 2 blank pages",
@@ -288,13 +368,15 @@ export const indiaVisaDecisionTree: VisaDecisionTree = {
         currency: "USD (varies by nationality)",
       },
       alternativeOptions: ["r6", "r7"],
-      applicableCountries: ["Most countries, though restrictions may apply for certain nationalities"],
+      applicableCountries: [
+        "Most countries, though restrictions may apply for certain nationalities",
+      ],
     },
 
     r6: {
       id: "r6",
       title: "Student Visa (Short-term)",
-      description: 
+      description:
         "For short-term courses, training programs, or internships less than 6 months in duration.",
       requirements: [
         "Valid passport with at least 6 months validity and 2 blank pages",
@@ -316,13 +398,15 @@ export const indiaVisaDecisionTree: VisaDecisionTree = {
         currency: "USD (varies by nationality)",
       },
       alternativeOptions: ["r1", "r5"],
-      applicableCountries: ["Most countries, though restrictions may apply for certain nationalities"],
+      applicableCountries: [
+        "Most countries, though restrictions may apply for certain nationalities",
+      ],
     },
 
     r7: {
       id: "r7",
       title: "Research Visa",
-      description: 
+      description:
         "For foreign scholars/researchers conducting research at Indian institutions, often requiring special clearance.",
       requirements: [
         "Valid passport with at least 6 months validity and 2 blank pages",
@@ -345,13 +429,15 @@ export const indiaVisaDecisionTree: VisaDecisionTree = {
         currency: "USD (varies by nationality)",
       },
       alternativeOptions: ["r5"],
-      applicableCountries: ["Most countries, though restrictions may apply for certain nationalities and research topics"],
+      applicableCountries: [
+        "Most countries, though restrictions may apply for certain nationalities and research topics",
+      ],
     },
 
     r8: {
       id: "r8",
       title: "Journalist Visa",
-      description: 
+      description:
         "For professional journalists, photographers, and media personnel traveling to India for media-related activities.",
       requirements: [
         "Valid passport with at least 6 months validity and 2 blank pages",
@@ -373,13 +459,15 @@ export const indiaVisaDecisionTree: VisaDecisionTree = {
         currency: "USD (varies by nationality)",
       },
       alternativeOptions: ["r2"],
-      applicableCountries: ["Most countries, though processing time and scrutiny vary by nationality"],
+      applicableCountries: [
+        "Most countries, though processing time and scrutiny vary by nationality",
+      ],
     },
 
     r9: {
       id: "r9",
       title: "Provisional Student Visa",
-      description: 
+      description:
         "Guidance for those still in the process of securing admission to Indian educational institutions.",
       requirements: [
         "Generally, a confirmed admission is required for student visa",
@@ -399,13 +487,15 @@ export const indiaVisaDecisionTree: VisaDecisionTree = {
         currency: "USD (depends on visa type eventually applied for)",
       },
       alternativeOptions: ["r1", "r5"],
-      applicableCountries: ["Most countries, though restrictions may apply for certain nationalities"],
+      applicableCountries: [
+        "Most countries, though restrictions may apply for certain nationalities",
+      ],
     },
 
     r10: {
       id: "r10",
       title: "Employment Visa",
-      description: 
+      description:
         "For foreigners coming to work in India with Indian companies, organizations, or foreign companies with operations in India.",
       requirements: [
         "Valid passport with at least 6 months validity and 2 blank pages",
@@ -428,13 +518,15 @@ export const indiaVisaDecisionTree: VisaDecisionTree = {
         currency: "USD (varies by nationality)",
       },
       alternativeOptions: ["r2", "r13"],
-      applicableCountries: ["Most countries, though restrictions may apply for certain nationalities"],
+      applicableCountries: [
+        "Most countries, though restrictions may apply for certain nationalities",
+      ],
     },
 
     r11: {
       id: "r11",
       title: "Entry Visa (Family)",
-      description: 
+      description:
         "For spouses or dependent family members of Indian citizens or Overseas Citizen of India (OCI) cardholders.",
       requirements: [
         "Valid passport with at least 6 months validity and 2 blank pages",
@@ -456,13 +548,15 @@ export const indiaVisaDecisionTree: VisaDecisionTree = {
         currency: "USD (varies by nationality)",
       },
       alternativeOptions: ["r1"],
-      applicableCountries: ["Most countries, though restrictions may apply for certain nationalities"],
+      applicableCountries: [
+        "Most countries, though restrictions may apply for certain nationalities",
+      ],
     },
 
     r12: {
       id: "r12",
       title: "Volunteer Visa",
-      description: 
+      description:
         "For foreigners coming to volunteer with registered NGOs/organizations in India without payment/stipend.",
       requirements: [
         "Valid passport with at least 6 months validity and 2 blank pages",
@@ -485,13 +579,15 @@ export const indiaVisaDecisionTree: VisaDecisionTree = {
         currency: "USD (varies by nationality)",
       },
       alternativeOptions: ["r1", "r10"],
-      applicableCountries: ["Most countries, though restrictions may apply for certain nationalities"],
+      applicableCountries: [
+        "Most countries, though restrictions may apply for certain nationalities",
+      ],
     },
 
     r13: {
       id: "r13",
       title: "Project Visa",
-      description: 
+      description:
         "For skilled foreign workers coming to execute specific projects in power and steel sectors.",
       requirements: [
         "Valid passport with at least 6 months validity and 2 blank pages",
@@ -513,13 +609,15 @@ export const indiaVisaDecisionTree: VisaDecisionTree = {
         currency: "USD (varies by nationality)",
       },
       alternativeOptions: ["r10"],
-      applicableCountries: ["Most countries, though restrictions may apply for certain nationalities"],
+      applicableCountries: [
+        "Most countries, though restrictions may apply for certain nationalities",
+      ],
     },
 
     r14: {
       id: "r14",
       title: "Not eligible for work visa",
-      description: 
+      description:
         "India does not offer specific digital nomad or remote work visas. Working remotely for foreign employers while in India on tourist visa is technically not permitted.",
       requirements: [
         "Working remotely on tourist visa may violate visa conditions",
@@ -549,7 +647,7 @@ export const indiaVisaDecisionTree: VisaDecisionTree = {
     r15: {
       id: "r15",
       title: "Regular Tourist Visa (Non-eVisa Eligible)",
-      description: 
+      description:
         "Traditional paper visa application for tourists from countries not eligible for India's eVisa program.",
       requirements: [
         "Valid passport with at least 6 months validity and 2 blank pages",
@@ -573,13 +671,15 @@ export const indiaVisaDecisionTree: VisaDecisionTree = {
         currency: "USD (varies by nationality)",
       },
       alternativeOptions: ["r2", "r12"],
-      applicableCountries: ["Countries not eligible for eVisa, including but not limited to certain regions"],
+      applicableCountries: [
+        "Countries not eligible for eVisa, including but not limited to certain regions",
+      ],
     },
 
     r16: {
       id: "r16",
       title: "Check eVisa Eligibility",
-      description: 
+      description:
         "Information to determine if your nationality qualifies for India's eVisa program.",
       requirements: [
         "Currently, citizens of most countries are eligible for eVisa except some restricted nationalities",
@@ -606,6 +706,7 @@ export const indiaVisaDecisionTree: VisaDecisionTree = {
   metadata: {
     version: "1.0.0",
     lastUpdated: "2025-03-19",
+    author: "Max",
     countries: ["India"],
   },
 };

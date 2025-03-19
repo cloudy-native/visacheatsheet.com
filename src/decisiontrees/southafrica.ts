@@ -542,6 +542,7 @@ export const southafricaVisaDecisionTree: VisaDecisionTree = {
   metadata: {
     version: "1.0.0",
     lastUpdated: "2025-03-19",
+    author: "Max",
     countries: ["South Africa"],
   },
 };

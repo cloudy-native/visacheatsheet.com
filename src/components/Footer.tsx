@@ -88,10 +88,10 @@ const Footer = () => {
               </Text>
             </Box>
             <Text fontSize={"sm"}>
-              Let us walk you through finding the right visa. We guide you with
-              simple questions and answers, specific to the rules and
-              regulations of many countries and the specific set of visas
-              offered by each.
+              We’ll help you find the perfect visa! We’ll ask you a few simple
+              questions and give you all the info you need about the rules and
+              regulations of different countries, as well as the visas they
+              offer.
             </Text>
             <Stack direction={"row"} spacing={4}>
               <SocialButton label={"Twitter"} href={"https://twitter.com"}>
@@ -108,13 +108,19 @@ const Footer = () => {
 
           <Stack align={"flex-start"}>
             <ListHeader>Resources</ListHeader>
-            <Link href="https://www.iata.org/en/publications/timatic/" isExternal>
+            <Link
+              href="https://www.iata.org/en/publications/timatic/"
+              isExternal
+            >
               IATA Timatic
             </Link>
             <Link href="https://www.schengenvisainfo.com/" isExternal>
               Schengen Visa Info
             </Link>
-            <Link href="https://travel.state.gov/content/travel/en/us-visas.html" isExternal>
+            <Link
+              href="https://travel.state.gov/content/travel/en/us-visas.html"
+              isExternal
+            >
               US Visa Information
             </Link>
             <Link href="https://www.gov.uk/browse/visas-immigration" isExternal>

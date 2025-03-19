@@ -972,6 +972,7 @@ export const thaiVisaDecisionTree: VisaDecisionTree = {
   metadata: {
     version: "1.1.0",
     lastUpdated: "2025-03-19",
+    author: "Max",
     countries: ["Thailand"],
   },
 };

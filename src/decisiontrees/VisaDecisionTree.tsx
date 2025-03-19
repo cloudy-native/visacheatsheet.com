@@ -17,11 +17,12 @@ import {
   ListItem,
   Progress,
   Text,
+  useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
 import {
   ArrowLeft,
-  ArrowRightCircle,
+  ArrowRight,
   CheckCircle,
   ExternalLink,
   Info,
@@ -191,7 +192,7 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
                       borderRadius="md"
                     >
                       <Text>{option.text}</Text>
-                      <ArrowRightCircle
+                      <ArrowRight
                         size={18}
                         style={{ marginLeft: "10px", opacity: 0.6 }}
                       />
@@ -211,7 +212,7 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
               overflow="hidden"
             >
               <CardHeader>
-                <Heading size="md" mb={2}>
+                <Heading size="xl" mb={2}>
                   {result.title}
                 </Heading>
               </CardHeader>
@@ -280,7 +281,7 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
                       <>
                         <Heading size={"md"} mb={2}>
                           Also Consider
-                        </Heading>{" "}
+                        </Heading>
                         <Flex wrap="wrap" gap={2}>
                           {result.alternativeOptions.map((altId, index) => {
                             const altVisa = decisionTree.results[altId];
@@ -290,7 +291,6 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
                                   colorScheme="blue"
                                   key={index}
                                   onClick={() => setResult(altVisa)}
-                                  leftIcon={<ArrowRightCircle size={10} />}
                                 >
                                   {altVisa.title}
                                 </Button>
@@ -339,7 +339,7 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
 
                   <Button
                     colorScheme="blue"
-                    rightIcon={<ArrowRightCircle size={16} />}
+                    rightIcon={<ArrowRight size={16} />}
                     onClick={() =>
                       window.open(result.applicationLinks[0].url, "_blank")
                     }
@@ -402,6 +402,13 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
           </Card>
         </Box>
       </Flex>
+      <Box mt={6}>
+        <Text fontSize="xs" color={useColorModeValue("gray.400", "gray.600")}>
+          Version: {decisionTree.metadata.version} | Last Updated:{" "}
+          {decisionTree.metadata.lastUpdated} by {decisionTree.metadata.author}{" "}
+          | Countries: {decisionTree.metadata.countries.join(", ")}
+        </Text>
+      </Box>
     </Container>
   );
 };

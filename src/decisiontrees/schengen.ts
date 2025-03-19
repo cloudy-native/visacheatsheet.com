@@ -463,6 +463,7 @@ export const schengenVisaDecisionTree: VisaDecisionTree = {
   metadata: {
     version: "1.0.0",
     lastUpdated: "2025-03-19",
+    author: "Max",
     countries: [
       "Austria", "Belgium", "Croatia", "Czech Republic", "Denmark", 
       "Estonia", "Finland", "France", "Germany", "Greece", 

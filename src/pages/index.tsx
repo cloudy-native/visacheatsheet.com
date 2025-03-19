@@ -2,7 +2,6 @@ import {
   Box,
   Container,
   Heading,
-  Image,
   SimpleGrid,
   Stack,
   Text,
@@ -11,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { Link as GatsbyLink, HeadFC, PageProps } from "gatsby";
 import * as React from "react";
+import ReactCountryFlag from "react-country-flag";
 import { IconType } from "react-icons";
 import { visas } from "../decisiontrees/visas";
 
@@ -35,7 +35,7 @@ const IndexPage: React.FC<PageProps> = () => {
         pt={20}
         pb={16}
       >
-        <Container maxW={"5xl"}>
+        <Container maxW={"6xl"}>
           <Stack
             textAlign={"center"}
             align={"center"}
@@ -47,32 +47,47 @@ const IndexPage: React.FC<PageProps> = () => {
               lineHeight={"110%"}
               color={useColorModeValue("blue.600", "blue.300")}
             >
-              Find the right{" "}
-              <Text
-                as={"span"}
-                color={useColorModeValue("teal.500", "teal.300")}
-              >
-                visa for your trip
-              </Text>
+              Find the Right Visa
+            </Heading>
+            <Heading
+              fontWeight={700}
+              fontSize={{ base: "2xl", sm: "3xl", md: "4xl" }}
+              lineHeight={"110%"}
+              color={useColorModeValue("blue.600", "blue.300")}
+            >
+              With Just a Few Simple Questions
             </Heading>
             <Text
               color={useColorModeValue("gray.600", "gray.400")}
-              maxW={"3xl"}
               fontSize={{ base: "lg", md: "xl" }}
-              lineHeight={1.8}
+              lineHeight={1.5}
+              maxW={"4xl"}
             >
-              Navigate travel visa requirements easily with our interactive visa
-              finder. Answer a few simple questions about your trip and we'll
-              guide you to the right visa for your needs, complete with
-              application requirements, costs, and processing times.
+              Planning a trip abroad, whether it’s for business or pleasure, or
+              even considering immigration? What about retirement? Our
+              interactive visa finder is here to make navigating visa
+              requirements a breeze. Just answer a few simple questions about
+              your trip, and we’ll help you find the perfect visa for your
+              needs. We’ll also provide you with all the essential details,
+              including application requirements, costs, and processing times.
+              Plus, we’ll even give you a link to apply.
+            </Text>
+            <Text
+              color={useColorModeValue("gray.600", "gray.400")}
+              fontSize={{ base: "lg", md: "xl" }}
+              lineHeight={1.5}
+              maxW={"4xl"}
+            >
+              And best of all, it's free. No signup, no account, no hassle. No
+              wonder we're the web's favourite visa tool!
             </Text>
           </Stack>
         </Container>
       </Box>
 
       {/* Supported Countries */}
-      <Box py={16}>
-        <Container maxW={"4xl"}>
+      <Box py={4}>
+        <Container width={"full"} maxW={"6xl"}>
           <VStack spacing={8} textAlign="center">
             <Heading color={useColorModeValue("blue.600", "blue.300")}>
               Tell Us Where You're Headed
@@ -81,46 +96,43 @@ const IndexPage: React.FC<PageProps> = () => {
               fontSize="lg"
               color={useColorModeValue("gray.600", "gray.400")}
             >
-              We have Visa Cheat Sheets for the following countries and regions.
-              Please check back regularly for updates!
+              We’ve got Visa Cheat Sheets for a bunch of countries and regions.
+              Keep an eye out for updates!
             </Text>
-            <SimpleGrid columns={{ base: 2, md: 5 }} spacing={6} width="full">
+            <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacing={6}>
               {visas.map((country) => (
-                <Box
-                  key={country.name}
-                  as={GatsbyLink}
-                  to={`/visa-wizard?country=${country.id}`}
-                  p={4}
-                  borderWidth="1px"
-                  borderRadius="lg"
-                  borderColor={useColorModeValue("gray.200", "gray.700")}
-                  bg={useColorModeValue("white", "gray.800")}
-                  textAlign="center"
-                  _hover={{
-                    transform: "translateY(-4px)",
-                    shadow: "md",
-                    textDecoration: "none",
-                  }}
-                  transition="all 0.2s"
-                  cursor="pointer"
-                >
-                  <VStack spacing={3}>
-                    <Image
-                      src={country.flag}
-                      alt={`${country.name} flag`}
-                      width={160}
-                      borderRadius="md"
-                      border="1px solid"
-                      borderColor={useColorModeValue("gray.200", "gray.700")}
-                    />
-                    <Text
-                      fontWeight="medium"
-                      color={useColorModeValue("gray.700", "white")}
-                    >
-                      {country.name}
-                    </Text>
-                  </VStack>
-                </Box>
+                <>
+                  <Box
+                    key={country.name}
+                    as={GatsbyLink}
+                    to={`/visa-wizard?country=${country.id}`}
+                    p={4}
+                    borderWidth="1px"
+                    borderRadius="lg"
+                    textAlign="center"
+                    _hover={{
+                      transform: "translateY(-4px)",
+                      shadow: "md",
+                      textDecoration: "none",
+                    }}
+                    transition="all 0.2s"
+                    cursor="pointer"
+                  >
+                    <VStack spacing={3}>
+                      <Text
+                        fontWeight="medium"
+                        color={useColorModeValue("gray.700", "white")}
+                      >
+                        {country.name}
+                      </Text>
+                      <ReactCountryFlag
+                        countryCode={country.countryCode}
+                        svg
+                        style={{ fontSize: "100px" }}
+                      />
+                    </VStack>
+                  </Box>
+                </>
               ))}
             </SimpleGrid>
           </VStack>
@@ -139,22 +151,23 @@ const IndexPage: React.FC<PageProps> = () => {
               color={useColorModeValue("gray.600", "gray.400")}
             >
               The information provided on this website is for general
-              informational purposes only. While Emma and Max make every effort
-              to keep the content current and accurate, visa requirements and
-              immigration policies frequently change.{" "}
+              informational purposes only. While the publishers of this website
+              diligently strive to maintain the currency and accuracy of the
+              content, visa requirements and immigration policies are subject to
+              frequent change.
             </Text>
             <Text
               fontSize="md"
               color={useColorModeValue("gray.600", "gray.400")}
             >
-              We are not immigration lawyers, legal advisors, or government
-              officials. Our content is based on personal experience and
-              research, but should not be considered legal advice. Before making
-              any visa or immigration decisions, we strongly recommend
-              consulting with a qualified immigration attorney, verifying all
-              information with official government sources, and checking the
-              most recent requirements on the respective country's immigration
-              website.
+              We do not provide immigration legal advice, legal counsel, or
+              government official services. Our content is based on personal
+              experience and research, but it should not be construed as legal
+              advice. Before making any visa or immigration decisions, we
+              strongly recommend consulting with a qualified immigration
+              attorney. Additionally, it is essential to verify all information
+              with official government sources and consult the most recent
+              requirements on the respective country’s immigration website.
             </Text>
           </VStack>
         </Container>

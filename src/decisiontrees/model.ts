@@ -70,6 +70,7 @@ export interface VisaDecisionTree {
   metadata: {
     version: string;
     lastUpdated: string;
+    author: string;
     countries: string[]; // List of all countries covered
   };
 }

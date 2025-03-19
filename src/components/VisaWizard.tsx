@@ -4,58 +4,17 @@ import {
   Container,
   Flex,
   Heading,
-  Image,
   SimpleGrid,
   Text,
+  useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
-import { ArrowLeftCircle, ArrowRightCircle, Globe } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import React, { useState } from "react";
+import ReactCountryFlag from "react-country-flag";
 import VisaDecisionTree from "../decisiontrees/VisaDecisionTree";
 import { visas } from "../decisiontrees/visas";
-
-type CountryProps = {
-  id: string;
-  name: string;
-  flag: string;
-  isSelected: boolean;
-  onSelect: (id: string) => void;
-};
-
-// Individual country card component
-const CountryCard: React.FC<CountryProps> = ({
-  id,
-  name,
-  flag,
-  isSelected,
-  onSelect,
-}) => {
-  return (
-    <Box
-      p={4}
-      borderWidth="1px"
-      borderRadius="lg"
-      cursor="pointer"
-      transition="all 0.2s"
-      _hover={{ transform: "translateY(-2px)", shadow: "md" }}
-      onClick={() => onSelect(id)}
-      role="button"
-      aria-label={`View ${name} visa requirements`}
-    >
-      <VStack spacing={3}>
-        <Button variant="ghost" rightIcon={<ArrowRightCircle size={16} />}>
-          {name}
-        </Button>
-        <Image
-          src={flag}
-          alt={`${name} flag`}
-          borderRadius="md"
-          border="1px solid"
-        />
-      </VStack>
-    </Box>
-  );
-};
+import CountryCard from "./CountryCard";
 
 // Main Visa Wizard component
 const VisaWizard: React.FC = () => {
@@ -116,13 +75,15 @@ const VisaWizard: React.FC = () => {
       {!showDecisionTree ? (
         <>
           <VStack spacing={6} mb={12} textAlign="center">
-            <Globe size={50} color="var(--chakra-colors-blue-500)" />
-            <Heading as="h1" size="xl">
-              Visa Requirements Finder
+            <Heading
+              as="h1"
+              size="xl"
+              color={useColorModeValue("blue.600", "blue.300")}
+            >
+              Let's Get Started
             </Heading>
             <Text fontSize="lg" maxW="3xl">
-              Planning a trip abroad? Click on a destination country to find the
-              right visa for your needs.
+              Where do you want to go?
             </Text>
           </VStack>
 
@@ -132,7 +93,7 @@ const VisaWizard: React.FC = () => {
                 key={country.id}
                 id={country.id}
                 name={country.name}
-                flag={country.flag}
+                countryCode={country.countryCode}
                 isSelected={selectedCountry === country.id}
                 onSelect={handleSelectCountry}
               />
@@ -148,15 +109,18 @@ const VisaWizard: React.FC = () => {
                   variant="ghost"
                   colorScheme="blue"
                   onClick={handleBackToCountries}
-                  leftIcon={<ArrowLeftCircle size={32} />}
+                  leftIcon={<ArrowLeft size={32} />}
                 />
-                <Image
-                  src={selectedCountryData.flag}
-                  alt={`${selectedCountryData.name} flag`}
-                  width={20}
-                  borderRadius="sm"
+                <ReactCountryFlag
+                  countryCode={selectedCountryData.countryCode}
+                  svg
+                  style={{ fontSize: "80px" }}
                 />
-                <Heading as="h2" size="lg">
+                <Heading
+                  as="h2"
+                  size="lg"
+                  color={useColorModeValue("blue.600", "blue.300")}
+                >
                   {selectedCountryData.name} Visa Requirements
                 </Heading>
               </Flex>
