@@ -108,8 +108,7 @@ const IndexPage: React.FC<PageProps> = () => {
                     <Image
                       src={country.flag}
                       alt={`${country.name} flag`}
-                      boxSize="80px"
-                      objectFit="cover"
+                      width={160}
                       borderRadius="md"
                       border="1px solid"
                       borderColor={useColorModeValue("gray.200", "gray.700")}

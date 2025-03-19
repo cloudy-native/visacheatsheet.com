@@ -43,17 +43,15 @@ const CountryCard: React.FC<CountryProps> = ({
       aria-label={`View ${name} visa requirements`}
     >
       <VStack spacing={3}>
-        <Image
-          src={flag}
-          alt={`${name} flag`}
-          boxSize="80px"
-          objectFit="cover"
-          borderRadius="md"
-          border="1px solid"
-        />
         <Button variant="ghost" rightIcon={<ArrowRightCircle size={16} />}>
           {name}
         </Button>
+        <Image
+          src={flag}
+          alt={`${name} flag`}
+          borderRadius="md"
+          border="1px solid"
+        />
       </VStack>
     </Box>
   );
@@ -155,8 +153,8 @@ const VisaWizard: React.FC = () => {
                 <Image
                   src={selectedCountryData.flag}
                   alt={`${selectedCountryData.name} flag`}
-                  boxSize="40px"
-                  borderRadius="md"
+                  width={20}
+                  borderRadius="sm"
                 />
                 <Heading as="h2" size="lg">
                   {selectedCountryData.name} Visa Requirements
