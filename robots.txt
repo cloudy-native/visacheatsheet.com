@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://yoursite.com/sitemap-index.xml
-Host: https://yoursite.com
+Sitemap: https://visacheatsheet.com/sitemap-index.xml
+Host: https://visacheatsheet.com
