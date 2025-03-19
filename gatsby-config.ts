@@ -5,7 +5,7 @@ const config: GatsbyConfig = {
     title: `Visa Cheat Sheet`,
     description: `Find the right visa with a set of simple questions`,
     author: `@yourusername`,
-    siteUrl: `https://yoursite.com`,
+    siteUrl: `https://visacheatsheet.com`,
   },
   graphqlTypegen: true,
   plugins: [
