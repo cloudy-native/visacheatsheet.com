@@ -17,7 +17,6 @@ import {
   ListItem,
   Progress,
   Text,
-  useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
 import {
@@ -55,12 +54,6 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
     }>
   >([]);
   const [showJourney, setShowJourney] = useState<boolean>(false);
-
-  // UI colors
-  const cardBg = useColorModeValue("white", "gray.800");
-  const primaryColor = useColorModeValue("blue.500", "blue.300");
-  const secondaryColor = useColorModeValue("teal.500", "teal.300");
-  const borderColor = useColorModeValue("gray.200", "gray.700");
 
   const currentQuestion = decisionTree.questions[currentQuestionId];
 
@@ -123,7 +116,6 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
           {(journey.length > 0 || result) && (
             <Button
               leftIcon={<ArrowLeft size={16} />}
-              variant="outline"
               colorScheme="blue"
               size="sm"
               onClick={handleBack}
@@ -134,9 +126,8 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
         </Box>
         <Box>
           <Button
+            colorScheme="blue"
             rightIcon={<RotateCcw size={16} />}
-            variant="outline"
-            colorScheme="teal"
             size="sm"
             onClick={resetJourney}
           >
@@ -154,12 +145,8 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
           borderRadius="full"
         />
         <Flex justify="space-between" mt={2}>
-          <Text fontSize="sm" color="gray.600">
-            Start
-          </Text>
-          <Text fontSize="sm" color="gray.600">
-            Result
-          </Text>
+          <Text fontSize="sm">Start</Text>
+          <Text fontSize="sm">Result</Text>
         </Flex>
       </Box>
 
@@ -169,9 +156,7 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
           {/* Question Card */}
           {!result && (
             <Card
-              bg={cardBg}
               borderWidth="1px"
-              borderColor={borderColor}
               borderRadius="lg"
               shadow="md"
               overflow="hidden"
@@ -180,8 +165,8 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
                 <Heading size="md">{currentQuestion.text}</Heading>
                 {currentQuestion.helpText && (
                   <Flex align="center" mt={2}>
-                    <Info size={14} color="gray.500" />
-                    <Text ml={2} fontSize="sm" color="gray.600">
+                    <Info size={14} />
+                    <Text ml={2} fontSize="sm">
                       {currentQuestion.helpText}
                     </Text>
                   </Flex>
@@ -192,6 +177,7 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
                 <VStack spacing={3} align="stretch">
                   {currentQuestion.options.map((option) => (
                     <Button
+                      colorScheme="blue"
                       key={option.id}
                       onClick={() => handleSelectOption(option)}
                       size="lg"
@@ -202,8 +188,6 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
                       px={4}
                       whiteSpace="normal"
                       borderWidth="1px"
-                      borderColor={borderColor}
-                      _hover={{ bg: "blue.50", borderColor: "blue.200" }}
                       borderRadius="md"
                     >
                       <Text>{option.text}</Text>
@@ -221,14 +205,12 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
           {/* Result Card */}
           {result && (
             <Card
-              bg={cardBg}
               borderWidth="1px"
-              borderColor={borderColor}
               borderRadius="lg"
               shadow="md"
               overflow="hidden"
             >
-              <CardHeader bg={primaryColor} color="white">
+              <CardHeader>
                 <Heading size="md" mb={2}>
                   {result.title}
                 </Heading>
@@ -239,7 +221,7 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
                   <Text>{result.description}</Text>
 
                   <Box>
-                    <Heading size={"md"} mb={2} color={secondaryColor}>
+                    <Heading size={"md"} mb={2}>
                       Requirements
                     </Heading>
                     <List spacing={2}>
@@ -249,11 +231,7 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
                           display="flex"
                           alignItems="flex-start"
                         >
-                          <ListIcon
-                            as={CheckCircle}
-                            color={secondaryColor}
-                            mt={1}
-                          />
+                          <ListIcon as={CheckCircle} mt={1} />
                           <Text>{req}</Text>
                         </ListItem>
                       ))}
@@ -263,7 +241,7 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
                   <Flex justify="space-between" wrap="wrap" gap={4}>
                     {result.processingTime && (
                       <Box flex="1" minW="200px">
-                        <Heading size={"md"} mb={2} color={secondaryColor}>
+                        <Heading size={"md"} mb={2}>
                           Processing Time
                         </Heading>
                         <Text>{result.processingTime}</Text>
@@ -272,7 +250,7 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
 
                     {result.cost && (
                       <Box flex="1" minW="200px">
-                        <Heading size={"md"} mb={2} color={secondaryColor}>
+                        <Heading size={"md"} mb={2}>
                           Cost
                         </Heading>
                         <Text>
@@ -285,7 +263,7 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
                   </Flex>
 
                   <Box>
-                    <Heading size={"md"} mb={2} color={secondaryColor}>
+                    <Heading size={"md"} mb={2}>
                       Applicable Countries
                     </Heading>
                     <Flex gap={2} flexWrap="wrap">
@@ -300,7 +278,7 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
                   {result.alternativeOptions &&
                     result.alternativeOptions.length > 0 && (
                       <>
-                        <Heading size={"md"} mb={2} color={secondaryColor}>
+                        <Heading size={"md"} mb={2}>
                           Also Consider
                         </Heading>{" "}
                         <Flex wrap="wrap" gap={2}>
@@ -309,8 +287,8 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
                             return (
                               altVisa && (
                                 <Button
+                                  colorScheme="blue"
                                   key={index}
-                                  colorScheme="green"
                                   onClick={() => setResult(altVisa)}
                                   leftIcon={<ArrowRightCircle size={10} />}
                                 >
@@ -324,7 +302,7 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
                     )}
 
                   <Box>
-                    <Heading size={"md"} mb={2} color={secondaryColor}>
+                    <Heading size={"md"} mb={2}>
                       Official Links
                     </Heading>
                     <List spacing={2}>
@@ -332,7 +310,6 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
                         <ListItem key={index}>
                           <Link
                             href={link.url}
-                            color={primaryColor}
                             isExternal
                             display="flex"
                             alignItems="center"
@@ -350,7 +327,7 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
                 </VStack>
               </CardBody>
 
-              <CardFooter borderTopWidth="1px" borderColor={borderColor}>
+              <CardFooter borderTopWidth="1px">
                 <Flex width="100%" justify="space-between">
                   <Button
                     leftIcon={<RotateCcw size={16} />}
@@ -361,9 +338,8 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
                   </Button>
 
                   <Button
+                    colorScheme="blue"
                     rightIcon={<ArrowRightCircle size={16} />}
-                    variant="outline"
-                    colorScheme="teal"
                     onClick={() =>
                       window.open(result.applicationLinks[0].url, "_blank")
                     }
@@ -381,13 +357,7 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
           flex="1"
           display={{ base: result ? "block" : "none", md: "block" }}
         >
-          <Card
-            bg={cardBg}
-            borderWidth="1px"
-            borderColor={borderColor}
-            borderRadius="lg"
-            shadow="md"
-          >
+          <Card borderWidth="1px" borderRadius="lg" shadow="md">
             <CardHeader
               display="flex"
               justifyContent="space-between"
@@ -408,16 +378,12 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
             <Collapse in={showJourney || { base: false, md: true }}>
               <CardBody>
                 {journey.length === 0 ? (
-                  <Text fontSize="sm" color="gray.500">
-                    No selections yet
-                  </Text>
+                  <Text fontSize="sm">No selections yet</Text>
                 ) : (
                   <VStack spacing={4} align="stretch">
                     {journey.map((step, index) => (
                       <Box key={index}>
-                        <Text fontSize="xs" color="gray.500">
-                          Question {index + 1}
-                        </Text>
+                        <Text fontSize="xs">Question {index + 1}</Text>
                         <Text fontWeight="medium" fontSize="sm">
                           {step.questionText}
                         </Text>

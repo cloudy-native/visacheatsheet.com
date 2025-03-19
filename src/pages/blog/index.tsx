@@ -112,7 +112,6 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({
         _hover={{
           transform: "translateY(-4px)",
           shadow: "lg",
-          borderColor: useColorModeValue("blue.300", "blue.500"),
         }}
       >
         {isFeatured && (

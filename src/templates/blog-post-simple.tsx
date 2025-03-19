@@ -58,7 +58,7 @@ const BlogPostTemplate = ({ data }) => {
         </article>
         
         <Box>
-          <Button as={Link} to="/blog" colorScheme="blue" variant="outline">
+          <Button as={Link} to="/blog" colorScheme="blue" >
             Back to Blog
           </Button>
         </Box>

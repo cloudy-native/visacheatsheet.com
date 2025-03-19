@@ -7,7 +7,6 @@ import {
   Image,
   SimpleGrid,
   Text,
-  useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
 import { ArrowLeftCircle, ArrowRightCircle, Globe } from "lucide-react";
@@ -31,22 +30,14 @@ const CountryCard: React.FC<CountryProps> = ({
   isSelected,
   onSelect,
 }) => {
-  const bgColor = useColorModeValue("white", "gray.800");
-  const borderColor = useColorModeValue("gray.200", "gray.700");
-  const hoverBg = useColorModeValue("blue.50", "blue.900");
-  const selectedBg = useColorModeValue("blue.100", "blue.800");
-  const selectedBorder = useColorModeValue("blue.500", "blue.300");
-
   return (
     <Box
       p={4}
       borderWidth="1px"
       borderRadius="lg"
-      borderColor={isSelected ? selectedBorder : borderColor}
-      bg={isSelected ? selectedBg : bgColor}
       cursor="pointer"
       transition="all 0.2s"
-      _hover={{ bg: hoverBg, transform: "translateY(-2px)", shadow: "md" }}
+      _hover={{ transform: "translateY(-2px)", shadow: "md" }}
       onClick={() => onSelect(id)}
       role="button"
       aria-label={`View ${name} visa requirements`}
@@ -59,13 +50,8 @@ const CountryCard: React.FC<CountryProps> = ({
           objectFit="cover"
           borderRadius="md"
           border="1px solid"
-          borderColor={borderColor}
         />
-        <Button
-          colorScheme="blue"
-          variant="ghost"
-          rightIcon={<ArrowRightCircle size={16} />}
-        >
+        <Button variant="ghost" rightIcon={<ArrowRightCircle size={16} />}>
           {name}
         </Button>
       </VStack>
@@ -78,9 +64,6 @@ const VisaWizard: React.FC = () => {
   // Check for country parameter in URL query
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
   const [showDecisionTree, setShowDecisionTree] = useState<boolean>(false);
-
-  const primaryColor = useColorModeValue("blue.600", "blue.300");
-  const textColor = useColorModeValue("gray.600", "gray.300");
 
   // Use effect to check for country parameter in URL on component mount
   React.useEffect(() => {
@@ -136,10 +119,10 @@ const VisaWizard: React.FC = () => {
         <>
           <VStack spacing={6} mb={12} textAlign="center">
             <Globe size={50} color="var(--chakra-colors-blue-500)" />
-            <Heading as="h1" size="xl" color={primaryColor}>
+            <Heading as="h1" size="xl">
               Visa Requirements Finder
             </Heading>
-            <Text fontSize="lg" color={textColor} maxW="3xl">
+            <Text fontSize="lg" maxW="3xl">
               Planning a trip abroad? Click on a destination country to find the
               right visa for your needs.
             </Text>
@@ -175,7 +158,7 @@ const VisaWizard: React.FC = () => {
                   boxSize="40px"
                   borderRadius="md"
                 />
-                <Heading as="h2" size="lg" color={primaryColor}>
+                <Heading as="h2" size="lg">
                   {selectedCountryData.name} Visa Requirements
                 </Heading>
               </Flex>

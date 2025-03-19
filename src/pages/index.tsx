@@ -1,10 +1,7 @@
 import {
   Box,
-  Button,
   Container,
-  Flex,
   Heading,
-  Icon,
   Image,
   SimpleGrid,
   Stack,
@@ -15,7 +12,6 @@ import {
 import { Link as GatsbyLink, HeadFC, PageProps } from "gatsby";
 import * as React from "react";
 import { IconType } from "react-icons";
-import { FaPassport } from "react-icons/fa";
 import { visas } from "../decisiontrees/visas";
 
 interface FeatureProps {
@@ -23,40 +19,6 @@ interface FeatureProps {
   text: string;
   icon: IconType;
 }
-
-const Feature: React.FC<FeatureProps> = ({ title, text, icon }) => {
-  return (
-    <Stack
-      align={"center"}
-      textAlign={"center"}
-      p={8}
-      rounded={"lg"}
-      bg={useColorModeValue("white", "gray.800")}
-      boxShadow={"lg"}
-      border={"1px solid"}
-      borderColor={useColorModeValue("gray.200", "gray.700")}
-      transition="transform 0.3s"
-      _hover={{
-        transform: "translateY(-5px)",
-      }}
-    >
-      <Flex
-        w={16}
-        h={16}
-        align={"center"}
-        justify={"center"}
-        color={"white"}
-        rounded={"full"}
-        bg={"blue.500"}
-        mb={5}
-      >
-        <Icon as={icon} w={8} h={8} />
-      </Flex>
-      <Heading fontSize={"xl"}>{title}</Heading>
-      <Text color={useColorModeValue("gray.600", "gray.400")}>{text}</Text>
-    </Stack>
-  );
-};
 
 const IndexPage: React.FC<PageProps> = () => {
   const bgGradient = useColorModeValue(
@@ -109,7 +71,7 @@ const IndexPage: React.FC<PageProps> = () => {
       </Box>
 
       {/* Supported Countries */}
-      <Box bg={useColorModeValue("gray.50", "gray.900")} py={16}>
+      <Box py={16}>
         <Container maxW={"4xl"}>
           <VStack spacing={8} textAlign="center">
             <Heading color={useColorModeValue("blue.600", "blue.300")}>
@@ -137,7 +99,6 @@ const IndexPage: React.FC<PageProps> = () => {
                   _hover={{
                     transform: "translateY(-4px)",
                     shadow: "md",
-                    borderColor: "blue.400",
                     textDecoration: "none",
                   }}
                   transition="all 0.2s"
@@ -194,7 +155,7 @@ const IndexPage: React.FC<PageProps> = () => {
               consulting with a qualified immigration attorney, verifying all
               information with official government sources, and checking the
               most recent requirements on the respective country's immigration
-              website. 
+              website.
             </Text>
           </VStack>
         </Container>

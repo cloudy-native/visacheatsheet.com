@@ -1,11 +1,19 @@
-import { Box } from "@chakra-ui/react";
+import { Box, useColorModeValue } from "@chakra-ui/react";
 import { HeadFC } from "gatsby";
 import React from "react";
 import VisaWizard from "../components/VisaWizard";
 
 const VisaWizardPage = () => {
+  const bgGradient = useColorModeValue(
+    "linear(to-b, blue.50, white)",
+    "linear(to-b, gray.900, gray.800)"
+  );
   return (
-    <Box py={8}>
+    <Box
+      bg={useColorModeValue("blue.50", "gray.900")}
+      bgGradient={bgGradient}
+      py={8}
+    >
       <VisaWizard />
     </Box>
   );

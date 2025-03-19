@@ -48,7 +48,7 @@ const BlogPostHeader = ({ post }) => {
                 ))}
               </HStack>
             )}
-            
+
             <Heading
               as="h1"
               fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
@@ -59,7 +59,7 @@ const BlogPostHeader = ({ post }) => {
             >
               {post.frontmatter.title}
             </Heading>
-            
+
             <Text
               fontSize="md"
               color={useColorModeValue("gray.600", "gray.400")}
@@ -69,11 +69,14 @@ const BlogPostHeader = ({ post }) => {
                 year: "numeric",
                 month: "long",
                 day: "numeric",
-              })} • {Math.ceil(post.wordCount.words / 200)} min read
+              })}{" "}
+              • {Math.ceil(post.wordCount.words / 200)} min read
             </Text>
-            
+
             <Flex justify="center" align="center">
-              <Text fontWeight="medium">{post.frontmatter.author || "Visa Cheat Sheet Team"}</Text>
+              <Text fontWeight="medium">
+                {post.frontmatter.author || "Visa Cheat Sheet Team"}
+              </Text>
             </Flex>
           </Box>
         </VStack>
@@ -84,18 +87,19 @@ const BlogPostHeader = ({ post }) => {
 
 const BlogPostTemplate = ({ data }) => {
   const post = data.markdownRemark;
-  
+
   const textColor = useColorModeValue("gray.700", "gray.300");
   const accentColor = useColorModeValue("blue.600", "blue.300");
   const borderColor = useColorModeValue("gray.200", "gray.700");
-  
+
   return (
     <>
       <BlogPostHeader post={post} />
-      
+
       <Container maxW="4xl" py={12}>
         <VStack spacing={8} align="start">
           <Button
+            colorScheme="blue"
             as={Link}
             to="/blog"
             variant="ghost"
@@ -105,10 +109,10 @@ const BlogPostTemplate = ({ data }) => {
           >
             Back to Blog
           </Button>
-          
+
           {/* Feature image would go here */}
-          
-          <Box 
+
+          <Box
             className="blog-post-content"
             sx={{
               "h2, h3, h4, h5, h6": {
@@ -117,73 +121,85 @@ const BlogPostTemplate = ({ data }) => {
                 marginTop: "1.5rem",
                 marginBottom: "1rem",
               },
-              "h2": { 
+              h2: {
                 fontSize: { base: "xl", md: "2xl" },
                 borderBottom: "1px solid",
                 borderColor: borderColor,
                 paddingBottom: "0.5rem",
               },
-              "h3": { fontSize: { base: "lg", md: "xl" } },
-              "p": { 
+              h3: { fontSize: { base: "lg", md: "xl" } },
+              p: {
                 marginY: "1rem",
                 lineHeight: "tall",
                 color: textColor,
                 fontSize: "lg",
               },
-              "ul, ol": { 
+              "ul, ol": {
                 paddingLeft: "2rem",
                 marginY: "1rem",
               },
-              "li": {
+              li: {
                 marginY: "0.5rem",
                 color: textColor,
               },
-              "a": {
+              a: {
                 color: accentColor,
                 textDecoration: "underline",
               },
-              "blockquote": {
+              blockquote: {
                 borderLeftWidth: "4px",
                 borderLeftColor: accentColor,
                 paddingLeft: "1rem",
                 fontStyle: "italic",
                 marginY: "1.5rem",
               },
-              "pre": {
+              pre: {
                 bg: useColorModeValue("gray.100", "gray.800"),
                 padding: "1rem",
                 borderRadius: "md",
                 overflowX: "auto",
                 marginY: "1.5rem",
               },
-              "img": {
+              img: {
                 maxWidth: "100%",
                 height: "auto",
                 borderRadius: "md",
                 marginY: "1.5rem",
               },
-              "hr": {
+              hr: {
                 marginY: "2rem",
                 borderColor: borderColor,
               },
             }}
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
-          
+
           <Divider borderColor={borderColor} my={8} />
-          
+
           <Box w="full">
             <Heading as="h3" size="md" mb={4}>
               Share this article
             </Heading>
             <HStack spacing={4}>
-              <Button leftIcon={<FaTwitter />} colorScheme="twitter" variant="outline">
+              <Button
+                leftIcon={<FaTwitter />}
+                colorScheme="twitter"
+                variant="outline"
+              >
                 Twitter
               </Button>
-              <Button leftIcon={<FaFacebook />} colorScheme="facebook" variant="outline">
+              <Button
+                leftIcon={<FaFacebook />}
+                colorScheme="facebook"
+                variant="outline"
+              >
                 Facebook
               </Button>
-              <Button leftIcon={<FaLinkedin />} colorScheme="linkedin" variant="outline">
+              <Button
+                leftIcon={<FaLinkedin />}
+                colorScheme="linkedin"
+                variant="outline"
+              >
                 LinkedIn
               </Button>
             </HStack>
@@ -197,7 +213,9 @@ const BlogPostTemplate = ({ data }) => {
 export default BlogPostTemplate;
 
 export const Head: HeadFC = ({ data }) => (
-  <title>{data.markdownRemark.frontmatter.title} | Find the Right Visa for Your Trip</title>
+  <title>
+    {data.markdownRemark.frontmatter.title} | Find the Right Visa for Your Trip
+  </title>
 );
 
 export const pageQuery = graphql`

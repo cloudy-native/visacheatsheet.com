@@ -31,7 +31,7 @@ const CountryCard = ({ id, name, flag }) => {
       bg={bgColor}
       cursor="pointer"
       transition="all 0.2s"
-      _hover={{ bg: hoverBg, transform: "translateY(-2px)", shadow: "md" }}
+      _hover={{ transform: "translateY(-2px)", shadow: "md" }}
       onClick={() => navigate(`/visa-wizard?country=${id}`)}
     >
       <VStack spacing={3}>
