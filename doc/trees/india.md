@@ -1,5 +1,6 @@
 # Visa Decision Tree for india
 
+```mermaid
 flowchart LR
     q1["What is the pur...visit to India?"]
     q1 -->|Tourism| q2
@@ -66,4 +67,4 @@ flowchart LR
     r14(["Not eligible for work visa"])
     r15(["Regular Tourist...eVisa Eligible"])
     r16(["Check eVisa Eligibility"])
-
+```

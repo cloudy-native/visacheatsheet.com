@@ -1,5 +1,6 @@
 # Visa Decision Tree for schengen
 
+```mermaid
 flowchart LR
     q1["What is the pri... Schengen Area?"]
     q1 -->|Tourism/Leisure| q2
@@ -65,4 +66,4 @@ flowchart LR
     r8(["No Airport Tran...t Visa Required"])
     r9(["Airport Transit Visa ATV"])
     r10(["National Visa ... D - Long Stay"])
-
+```

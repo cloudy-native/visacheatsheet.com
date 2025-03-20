@@ -1,5 +1,6 @@
 # Visa Decision Tree for china
 
+```mermaid
 flowchart LR
     q1["What is the pri...visit to China?"]
     q1 -->|Tourism/Leisure| q2
@@ -83,4 +84,4 @@ flowchart LR
     r18(["144-Hour Visa-Free Transit"])
     r19(["72-Hour Visa-Free Transit"])
     r20(["Check Transit V...ion Eligibility"])
-
+```

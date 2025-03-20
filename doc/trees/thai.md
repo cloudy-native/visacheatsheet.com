@@ -1,5 +1,6 @@
 # Visa Decision Tree for thai
 
+```mermaid
 flowchart LR
     q1["What is the pri...it to Thailand?"]
     q1 -->|Tourism/Leisure| q2
@@ -111,4 +112,4 @@ flowchart LR
     r20(["Tourist Visa with Extension"])
     r21(["Thailand Elite Visa"])
     r22(["Investment Visa...on-Immigrant B"])
-
+```

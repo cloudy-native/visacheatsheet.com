@@ -1,5 +1,6 @@
 # Visa Decision Tree for us
 
+```mermaid
 flowchart LR
     q1["What is the pri... United States?"]
     q1 -->|Tourism/Leisure| q2
@@ -73,4 +74,4 @@ flowchart LR
     r21(["EB-2 Visa Adva... Professionals"])
     r22(["H-2B Visa Temp...ltural Workers"])
     r23(["H-1C/TN Visa H... Professionals"])
-
+```

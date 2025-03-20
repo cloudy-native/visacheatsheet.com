@@ -1,5 +1,6 @@
 # Visa Decision Tree for brazil
 
+```mermaid
 flowchart LR
     q1["What is the mai...isit to Brazil?"]
     q1 -->|Tourism/Leisure| q2
@@ -74,4 +75,4 @@ flowchart LR
     r18(["Tourist Visa Ap...ication Process"])
     r19(["MERCOSUR Residence Agreement"])
     r20(["Visa Requirement Check"])
-
+```

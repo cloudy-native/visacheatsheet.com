@@ -1,5 +1,6 @@
 # Visa Decision Tree for russia
 
+```mermaid
 flowchart LR
     q1["What is the mai...isit to Russia?"]
     q1 -->|Tourism| q2
@@ -81,4 +82,4 @@ flowchart LR
     r16(["Tourist or Private Visit Visa"])
     r17(["Airport Transit... Visa Required"])
     r18(["Transit Visa"])
-
+```

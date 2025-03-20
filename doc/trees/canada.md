@@ -1,5 +1,6 @@
 # Visa Decision Tree for canada
 
+```mermaid
 flowchart LR
     q1["What is the mai...isit to Canada?"]
     q1 -->|Tourism/Visit| q2
@@ -98,4 +99,4 @@ flowchart LR
     r30(["Transit Without Visa Program"])
     r31(["Transit Visa"])
     r32(["Super Visa for ...nd Grandparents"])
-
+```

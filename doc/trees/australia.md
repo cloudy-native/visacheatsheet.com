@@ -1,5 +1,6 @@
 # Visa Decision Tree for australia
 
+```mermaid
 flowchart LR
     q1["What is the pri...t to Australia?"]
     q1 -->|Tourism/Holiday| q2
@@ -84,4 +85,4 @@ flowchart LR
     r18(["Temporary Activ... subclass 408"])
     r19(["No specific lon...rm tourist visa"])
     r20(["Visitor Visa fo... Family Stream"])
-
+```

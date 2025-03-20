@@ -1,5 +1,6 @@
 # Visa Decision Tree for uk
 
+```mermaid
 flowchart LR
     q1["What is the pri...United Kingdom?"]
     q1 -->|Tourism/Leisure| q2
@@ -83,4 +84,4 @@ flowchart LR
     r23(["Student Visa"])
     r24(["Direct Airside ...sit Visa DATV"])
     r25(["Transit without visa"])
-
+```

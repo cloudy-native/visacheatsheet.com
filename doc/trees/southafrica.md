@@ -1,5 +1,6 @@
 # Visa Decision Tree for southafrica
 
+```mermaid
 flowchart LR
     q1["What is the pur...o South Africa?"]
     q1 -->|Tourism/Leisure| q2
@@ -62,4 +63,4 @@ flowchart LR
     r11(["Retired Person Visa"])
     r12(["Visitors Visa ...urist/Business"])
     r13(["Visa Requirement Check"])
-
+```

@@ -34,13 +34,14 @@ const trees: { [key: string]: VisaDecisionTree } = {
 
 for (const country in trees) {
   const tree = trees[country];
-  const stream = fs.createWriteStream(`../doc/trees/${country}.md`);
+  const stream = fs.createWriteStream(`./doc/trees/${country}.md`);
   const mermaid = convertToMermaid(tree);
 
   stream.write("# Visa Decision Tree for " + country + "\n");
   stream.write("\n");
+  stream.write("```mermaid\n");
   stream.write(mermaid);
-  stream.write("\n");
+  stream.write("```\n");
 
   stream.end();
 

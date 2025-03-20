@@ -1,5 +1,6 @@
 # Visa Decision Tree for japan
 
+```mermaid
 flowchart LR
     q1["What is the pri...visit to Japan?"]
     q1 -->|Tourism/Leisure| q2
@@ -76,4 +77,4 @@ flowchart LR
     r19(["Visa Exemption ...igibility Check"])
     r20(["Shore Pass Lan...ing Permission"])
     r21(["Transit Visa"])
-
+```
