@@ -106,7 +106,6 @@ interface VisaDecisionTree {
 │   ├── pages/              # Page components
 │   │   ├── index.tsx       # Homepage
 │   │   ├── 404.tsx         # 404 page
-│   │   ├── visa-wizard.tsx # Visa wizard page
 │   │   └── blog/index.tsx  # Blog listing page
 │   ├── templates/          # Page templates
 │   │   ├── blog-post.tsx   # Full-featured blog post template

@@ -1,17 +1,12 @@
 import {
-  Box,
-  Button,
   Container,
-  Flex,
   Heading,
   SimpleGrid,
   Text,
   useColorModeValue,
-  VStack,
+  VStack
 } from "@chakra-ui/react";
-import { ArrowLeft } from "lucide-react";
 import React, { useState } from "react";
-import ReactCountryFlag from "react-country-flag";
 import VisaDecisionTree from "../decisiontrees/VisaDecisionTree";
 import { visas } from "../decisiontrees/visas";
 import CountryCard from "./CountryCard";
@@ -103,32 +98,11 @@ const VisaWizard: React.FC = () => {
       ) : (
         <>
           {selectedCountryData && (
-            <Box mb={6}>
-              <Flex align="center" gap={4}>
-                <Button
-                  variant="ghost"
-                  colorScheme="blue"
-                  onClick={handleBackToCountries}
-                  leftIcon={<ArrowLeft size={32} />}
-                />
-                <ReactCountryFlag
-                  countryCode={selectedCountryData.countryCode}
-                  svg
-                  style={{ fontSize: "80px" }}
-                />
-                <Heading
-                  as="h2"
-                  size="lg"
-                  color={useColorModeValue("blue.600", "blue.300")}
-                >
-                  {selectedCountryData.name} Visa Requirements
-                </Heading>
-              </Flex>
-            </Box>
-          )}
-
-          {selectedCountryData && (
-            <VisaDecisionTree decisionTree={selectedCountryData.decisionTree} />
+            <VisaDecisionTree
+              countryName={selectedCountryData.name}
+              countryCode={selectedCountryData.countryCode}
+              decisionTree={selectedCountryData.decisionTree}
+            />
           )}
         </>
       )}

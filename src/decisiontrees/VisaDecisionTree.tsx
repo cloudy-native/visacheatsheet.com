@@ -34,14 +34,23 @@ import type {
   VisaDecisionTree as DecisionTreeType,
   VisaResult,
 } from "./model";
+import ReactCountryFlag from "react-country-flag";
 
 interface VisaDecisionTreeProps {
+  countryName: string;
+  countryCode: string;
   decisionTree: DecisionTreeType;
 }
 
 const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
   decisionTree,
+  countryName,
+  countryCode,
 }) => {
+  const bgGradient = useColorModeValue(
+    "linear(to-b, blue.50, white)",
+    "linear(to-b, gray.900, gray.800)"
+  );
   const [currentQuestionId, setCurrentQuestionId] = useState<string>(
     decisionTree.startQuestionId
   );
@@ -110,7 +119,23 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
     : Math.min(100, (journey.length / 4) * 100);
 
   return (
-    <Container maxW="5xl" py={8}>
+    <Container maxW="5xl">
+      <Box mb={6}>
+        <Flex align="center" gap={4}>
+          <ReactCountryFlag
+            countryCode={countryCode}
+            svg
+            style={{ fontSize: "80px" }}
+          />
+          <Heading
+            as="h2"
+            size="lg"
+            color={useColorModeValue("blue.600", "blue.300")}
+          >
+            {countryName} Visa Requirements Wizard
+          </Heading>
+        </Flex>
+      </Box>
       {/* Navigation Buttons */}
       <Flex mb={4} justify="space-between" align="center">
         <Box>
@@ -157,10 +182,11 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
           {/* Question Card */}
           {!result && (
             <Card
-              borderWidth="1px"
               borderRadius="lg"
               shadow="md"
               overflow="hidden"
+              bgGradient={bgGradient}
+              border={"1px"}
             >
               <CardHeader>
                 <Heading size="md">{currentQuestion.text}</Heading>
@@ -206,10 +232,11 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
           {/* Result Card */}
           {result && (
             <Card
-              borderWidth="1px"
               borderRadius="lg"
               shadow="md"
               overflow="hidden"
+              bgGradient={bgGradient}
+              border={"1px"}
             >
               <CardHeader>
                 <Heading size="xl" mb={2}>
@@ -357,48 +384,35 @@ const VisaDecisionTree: React.FC<VisaDecisionTreeProps> = ({
           flex="1"
           display={{ base: result ? "block" : "none", md: "block" }}
         >
-          <Card borderWidth="1px" borderRadius="lg" shadow="md">
-            <CardHeader
-              display="flex"
-              justifyContent="space-between"
-              alignItems="center"
-            >
-              <Heading size="sm">Your Journey</Heading>
-              <Button
-                size="sm"
-                variant="ghost"
-                colorScheme="blue"
-                onClick={() => setShowJourney(!showJourney)}
-                display={{ base: "block", md: "none" }}
-              >
-                {showJourney ? "Hide" : "Show"}
-              </Button>
-            </CardHeader>
-
-            <Collapse in={showJourney || { base: false, md: true }}>
-              <CardBody>
-                {journey.length === 0 ? (
-                  <Text fontSize="sm">No selections yet</Text>
-                ) : (
-                  <VStack spacing={4} align="stretch">
-                    {journey.map((step, index) => (
-                      <Box key={index}>
-                        <Text fontSize="xs">Question {index + 1}</Text>
-                        <Text fontWeight="medium" fontSize="sm">
-                          {step.questionText}
-                        </Text>
-                        <Flex align="center">
-                          <Badge colorScheme="blue" mt={1}>
-                            {step.answerText}
-                          </Badge>
-                        </Flex>
-                        {index < journey.length - 1 && <Divider my={2} />}
-                      </Box>
-                    ))}
-                  </VStack>
-                )}
-              </CardBody>
-            </Collapse>
+          <Card
+            borderRadius="lg"
+            shadow="md"
+            bgGradient={bgGradient}
+            border={"1px"}
+          >
+            <CardHeader></CardHeader>
+            <CardBody>
+              {journey.length === 0 ? (
+                <Text fontSize="sm">No selections yet</Text>
+              ) : (
+                <VStack spacing={4} align="stretch">
+                  {journey.map((step, index) => (
+                    <Box key={index}>
+                      <Text fontSize="xs">Question {index + 1}</Text>
+                      <Text fontWeight="medium" fontSize="sm">
+                        {step.questionText}
+                      </Text>
+                      <Flex align="center">
+                        <Badge colorScheme="blue" mt={1}>
+                          {step.answerText}
+                        </Badge>
+                      </Flex>
+                      {index < journey.length - 1 && <Divider my={2} />}
+                    </Box>
+                  ))}
+                </VStack>
+              )}
+            </CardBody>
           </Card>
         </Box>
       </Flex>

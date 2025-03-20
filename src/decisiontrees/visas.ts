@@ -4,11 +4,15 @@ import { canadaVisaDecisionTree } from "./canada";
 import { chinaVisaDecisionTree } from "./china";
 import { indiaVisaDecisionTree } from "./india";
 import { japanVisaDecisionTree } from "./japan";
+import { mexicoVisaDecisionTree } from "./mexico";
+import { newzealandVisaDecisionTree } from "./newzealand";
 import { VisaDecisionTree } from "./model";
 import { russiaVisaDecisionTree } from "./russia";
 import { schengenVisaDecisionTree } from "./schengen";
+import { singaporeVisaDecisionTree } from "./singapore";
 import { southafricaVisaDecisionTree } from "./southafrica";
 import { thaiVisaDecisionTree } from "./thailand";
+import { uaeVisaDecisionTree } from "./uae";
 import { ukVisaDecisionTree } from "./uk";
 import { usVisaDecisionTree } from "./us";
 
@@ -40,6 +44,12 @@ export const visas: Country[] = [
     decisionTree: usVisaDecisionTree,
   },
   {
+    id: "mexico",
+    name: "Mexico",
+    countryCode: "mx",
+    decisionTree: mexicoVisaDecisionTree,
+  },
+  {
     id: "australia",
     name: "Australia",
     countryCode: "au",
@@ -62,6 +72,18 @@ export const visas: Country[] = [
     name: "China",
     countryCode: "cn",
     decisionTree: chinaVisaDecisionTree,
+  },
+  {
+    id: "singapore",
+    name: "Singapore",
+    countryCode: "sg",
+    decisionTree: singaporeVisaDecisionTree,
+  },
+  {
+    id: "uae",
+    name: "United Arab Emirates",
+    countryCode: "ae",
+    decisionTree: uaeVisaDecisionTree,
   },
   {
     id: "canada",
@@ -92,5 +114,11 @@ export const visas: Country[] = [
     name: "Japan",
     countryCode: "jp",
     decisionTree: japanVisaDecisionTree,
+  },
+  {
+    id: "newzealand",
+    name: "New Zealand",
+    countryCode: "nz",
+    decisionTree: newzealandVisaDecisionTree,
   },
 ];

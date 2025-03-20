@@ -15,22 +15,23 @@ import {
 } from "@chakra-ui/react";
 import { Link as GatsbyLink } from "gatsby";
 import React from "react";
-import BuyMeCoffeeButton from "./BuyMeCoffeeButton";
 
 interface NavItem {
   label: string;
   href: string;
   isExternal?: boolean;
+  isHome?: boolean;
 }
 
 const NAV_ITEMS: NavItem[] = [
   {
     label: "Home",
     href: "/",
+    isHome: true, // Special flag for home link
   },
   {
-    label: "Visa Wizard",
-    href: "/visa-wizard",
+    label: "About",
+    href: "/about",
   },
   {
     label: "Blog",
@@ -38,6 +39,11 @@ const NAV_ITEMS: NavItem[] = [
   },
 ];
 
+/**
+ * TODO: This got waaaay too complicated because of the requirement that the 'Home' link in nav clears the currently-selected country. There has to be a better way.
+ *
+ * @returns
+ */
 const Header = () => {
   const { isOpen, onToggle } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
@@ -88,8 +94,22 @@ const Header = () => {
 
           <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
             <Text
-              as={GatsbyLink}
-              to="/"
+              as="a"
+              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                if (typeof window !== "undefined") {
+                  // Use the global resetVisaWizard function if available
+                  // @ts-ignore - global function
+                  if (window.resetVisaWizard) {
+                    // @ts-ignore
+                    window.resetVisaWizard();
+                  } else {
+                    // Fallback if not on index page
+                    window.location.href = "/";
+                  }
+                }
+              }}
               textAlign={{ base: "center", md: "left" }}
               fontFamily={"heading"}
               fontWeight="bold"
@@ -99,29 +119,61 @@ const Header = () => {
                 textDecoration: "none",
                 color: "primary.600",
               }}
+              cursor="pointer"
             >
               Visa Cheat Sheet
             </Text>
 
             <Flex display={{ base: "none", md: "flex" }} ml={10}>
               <Stack direction={"row"} spacing={6} align="center">
-                {NAV_ITEMS.map((navItem) => (
-                  <Link
-                    key={navItem.label}
-                    as={!navItem.isExternal ? GatsbyLink : undefined}
-                    to={!navItem.isExternal ? navItem.href : undefined}
-                    href={navItem.isExternal ? navItem.href : undefined}
-                    fontSize={"md"}
-                    fontWeight={500}
-                    color={textColor}
-                    _hover={{
-                      textDecoration: "none",
-                      color: "primary.500",
-                    }}
-                  >
-                    {navItem.label}
-                  </Link>
-                ))}
+                {NAV_ITEMS.map((navItem) =>
+                  navItem.isHome ? (
+                    <Link
+                      key={navItem.label}
+                      as="a"
+                      href={navItem.href}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        if (typeof window !== "undefined") {
+                          // Use the global resetVisaWizard function if available
+                          // @ts-ignore - global function
+                          if (window.resetVisaWizard) {
+                            // @ts-ignore
+                            window.resetVisaWizard();
+                          } else {
+                            // Fallback if not on index page
+                            window.location.href = "/";
+                          }
+                        }
+                      }}
+                      fontSize={"md"}
+                      fontWeight={500}
+                      color={textColor}
+                      _hover={{
+                        textDecoration: "none",
+                        color: "primary.500",
+                      }}
+                    >
+                      {navItem.label}
+                    </Link>
+                  ) : (
+                    <Link
+                      key={navItem.label}
+                      as={!navItem.isExternal ? GatsbyLink : undefined}
+                      to={!navItem.isExternal ? navItem.href : undefined}
+                      href={navItem.isExternal ? navItem.href : undefined}
+                      fontSize={"md"}
+                      fontWeight={500}
+                      color={textColor}
+                      _hover={{
+                        textDecoration: "none",
+                        color: "primary.500",
+                      }}
+                    >
+                      {navItem.label}
+                    </Link>
+                  )
+                )}
               </Stack>
             </Flex>
           </Flex>
@@ -144,23 +196,54 @@ const Header = () => {
         <Collapse in={isOpen} animateOpacity>
           <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>
-              {NAV_ITEMS.map((navItem) => (
-                <Link
-                  key={navItem.label}
-                  as={!navItem.isExternal ? GatsbyLink : undefined}
-                  to={!navItem.isExternal ? navItem.href : undefined}
-                  href={navItem.isExternal ? navItem.href : undefined}
-                  py={2}
-                  fontWeight={500}
-                  color={textColor}
-                  _hover={{
-                    textDecoration: "none",
-                    color: "primary.500",
-                  }}
-                >
-                  {navItem.label}
-                </Link>
-              ))}
+              {NAV_ITEMS.map((navItem) =>
+                navItem.isHome ? (
+                  <Link
+                    key={navItem.label}
+                    as="a"
+                    href={navItem.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (typeof window !== "undefined") {
+                        // Use the global resetVisaWizard function if available
+                        // @ts-ignore - global function
+                        if (window.resetVisaWizard) {
+                          // @ts-ignore
+                          window.resetVisaWizard();
+                        } else {
+                          // Fallback if not on index page
+                          window.location.href = "/";
+                        }
+                      }
+                    }}
+                    py={2}
+                    fontWeight={500}
+                    color={textColor}
+                    _hover={{
+                      textDecoration: "none",
+                      color: "primary.500",
+                    }}
+                  >
+                    {navItem.label}
+                  </Link>
+                ) : (
+                  <Link
+                    key={navItem.label}
+                    as={!navItem.isExternal ? GatsbyLink : undefined}
+                    to={!navItem.isExternal ? navItem.href : undefined}
+                    href={navItem.isExternal ? navItem.href : undefined}
+                    py={2}
+                    fontWeight={500}
+                    color={textColor}
+                    _hover={{
+                      textDecoration: "none",
+                      color: "primary.500",
+                    }}
+                  >
+                    {navItem.label}
+                  </Link>
+                )
+              )}
               <Button
                 as={GatsbyLink}
                 to="/contact"

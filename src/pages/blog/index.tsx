@@ -1,26 +1,26 @@
 import {
+  Avatar,
   Box,
   Container,
-  Heading,
-  Text,
-  Stack,
-  SimpleGrid,
-  useColorModeValue,
-  Link as ChakraLink,
-  VStack,
-  HStack,
-  Tag,
-  Avatar,
   Flex,
+  Heading,
+  HStack,
+  SimpleGrid,
+  Stack,
+  Tag,
+  Text,
+  useColorModeValue,
+  VStack,
 } from "@chakra-ui/react";
 import {
-  HeadFC,
-  PageProps,
   Link as GatsbyLink,
   graphql,
+  HeadFC,
+  PageProps,
   useStaticQuery,
 } from "gatsby";
 import * as React from "react";
+import { Disclaimer } from "../../components/Disclaimer";
 
 const BlogHero = () => {
   const bgGradient = useColorModeValue(
@@ -225,6 +225,7 @@ const BlogPage: React.FC<PageProps> = () => {
           )}
         </VStack>
       </Container>
+      <Disclaimer/>
     </>
   );
 };

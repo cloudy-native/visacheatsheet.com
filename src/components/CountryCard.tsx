@@ -18,6 +18,10 @@ const CountryCard: React.FC<CountryProps> = ({
   isSelected,
   onSelect,
 }) => {
+  const bgGradient = useColorModeValue(
+    "linear(to-b, blue.50, white)",
+    "linear(to-b, gray.900, gray.800)"
+  );
   return (
     <Box
       p={4}
@@ -29,16 +33,17 @@ const CountryCard: React.FC<CountryProps> = ({
       onClick={() => onSelect(id)}
       role="button"
       aria-label={`View ${name} visa requirements`}
+      bgGradient={bgGradient}
     >
       <VStack spacing={3}>
         <Button variant="ghost" rightIcon={<ArrowRight size={16} />}>
           {name}
         </Button>
-          <ReactCountryFlag
-            countryCode={countryCode}
-            svg
-            style={{ fontSize: "120px" }}
-          />
+        <ReactCountryFlag
+          countryCode={countryCode}
+          svg
+          style={{ fontSize: "120px" }}
+        />
       </VStack>
     </Box>
   );
