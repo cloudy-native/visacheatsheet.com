@@ -19,7 +19,7 @@
     "theme:watch": "chakra-cli tokens src/theme/index.ts --watch",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "deploy:gh": "gatsby build --prefix-paths && gh-pages -d public -b main",
-    "generate-mermaid": "node src/decisiontrees/runMermaid.js"
+    "generate-mermaid": "ts-node ./scripts/generateMermaid"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.2.4",

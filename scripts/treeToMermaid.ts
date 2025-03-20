@@ -132,7 +132,7 @@ function mapTerminalOptionToResult(
  */
 export function logTreeAsMermaid(
   tree: VisaDecisionTree,
-  textMaxLength: number = 100,
+  textMaxLength: number = 30,
 ): void {
   const mermaid = convertToMermaid(tree, textMaxLength);
   console.log(mermaid);
