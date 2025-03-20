@@ -22,6 +22,7 @@ const CountryCard: React.FC<CountryProps> = ({
     "linear(to-b, blue.50, white)",
     "linear(to-b, gray.900, gray.800)"
   );
+  
   return (
     <Box
       p={4}

@@ -68,7 +68,7 @@ const AboutPage: React.FC<PageProps> = () => {
                   permissions.
                 </Text>
                 <Text fontSize="lg">
-                  We created this tool after experiencing firsthand how
+                  We created this tool after experiencing first hand how
                   challenging it can be to find clear, up-to-date information
                   about visa requirements when planning international travel.
                 </Text>
@@ -188,7 +188,7 @@ const AboutPage: React.FC<PageProps> = () => {
                     combines his expertise to create intuitive tools that
                     simplify complex tasks. This website is just one of his many
                     creations. With over 20 countries under his belt and
-                    firsthand experience navigating various visa systems, Max
+                    first-hand experience navigating various visa systems, Max
                     has a wealth of knowledge to share.
                   </Text>
                 </Box>

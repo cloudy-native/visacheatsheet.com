@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import VisaDecisionTree from "../decisiontrees/VisaDecisionTree";
-import { visas } from "../decisiontrees/visas";
+import { supportedCountries} from "../decisiontrees";
 import CountryCard from "./CountryCard";
 
 // Main Visa Wizard component
@@ -26,7 +26,7 @@ const VisaWizard: React.FC = () => {
 
       if (countryParam) {
         // Validate that the country exists in our list
-        const validCountry = visas.find((c) => c.id === countryParam);
+        const validCountry = supportedCountries.find((c) => c.id === countryParam);
         if (validCountry) {
           setSelectedCountry(countryParam);
           setShowDecisionTree(true);
@@ -62,7 +62,7 @@ const VisaWizard: React.FC = () => {
 
   // Find the selected country data
   const selectedCountryData = selectedCountry
-    ? visas.find((country) => country.id === selectedCountry)
+    ? supportedCountries.find((country) => country.id === selectedCountry)
     : null;
 
   return (
@@ -83,11 +83,11 @@ const VisaWizard: React.FC = () => {
           </VStack>
 
           <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacing={6}>
-            {visas.map((country) => (
+            {supportedCountries.map((country) => (
               <CountryCard
                 key={country.id}
                 id={country.id}
-                name={country.name}
+                name={country.countryName}
                 countryCode={country.countryCode}
                 isSelected={selectedCountry === country.id}
                 onSelect={handleSelectCountry}
@@ -99,7 +99,7 @@ const VisaWizard: React.FC = () => {
         <>
           {selectedCountryData && (
             <VisaDecisionTree
-              countryName={selectedCountryData.name}
+              countryName={selectedCountryData.countryName}
               countryCode={selectedCountryData.countryCode}
               decisionTree={selectedCountryData.decisionTree}
             />

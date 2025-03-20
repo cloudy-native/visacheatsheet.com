@@ -21,7 +21,7 @@ import { useEffect, useState, useMemo } from "react";
 import CountryCard from "../components/CountryCard";
 import { Disclaimer } from "../components/Disclaimer";
 import VisaDecisionTree from "../decisiontrees/VisaDecisionTree";
-import { visas } from "../decisiontrees/visas";
+import { supportedCountries } from "../decisiontrees";
 
 const IndexPage: React.FC<PageProps> = () => {
   const bgGradient = useColorModeValue(
@@ -67,7 +67,7 @@ const IndexPage: React.FC<PageProps> = () => {
 
       if (countryParam) {
         // Validate that the country exists in our list
-        const validCountry = visas.find((c) => c.id === countryParam);
+        const validCountry = supportedCountries.find((c) => c.id === countryParam);
         if (validCountry) {
           setSelectedCountry(countryParam);
           setShowDecisionTree(true);
@@ -92,16 +92,16 @@ const IndexPage: React.FC<PageProps> = () => {
 
   // Find the selected country data
   const selectedCountryData = selectedCountry
-    ? visas.find((country) => country.id === selectedCountry)
+    ? supportedCountries.find((country) => country.id === selectedCountry)
     : null;
     
   // Filter countries based on search query
   const filteredCountries = useMemo(() => {
-    if (!searchQuery.trim()) return visas;
+    if (!searchQuery.trim()) return supportedCountries;
     
     const query = searchQuery.toLowerCase().trim();
-    return visas.filter(country => 
-      country.name.toLowerCase().includes(query) ||
+    return supportedCountries.filter(country => 
+      country.countryName.toLowerCase().includes(query) ||
       country.id.toLowerCase().includes(query)
     );
   }, [searchQuery]);
@@ -264,7 +264,7 @@ const IndexPage: React.FC<PageProps> = () => {
                     <CountryCard
                       key={country.id}
                       id={country.id}
-                      name={country.name}
+                      name={country.countryName}
                       countryCode={country.countryCode}
                       isSelected={selectedCountry === country.id}
                       onSelect={handleSelectCountry}
@@ -279,7 +279,7 @@ const IndexPage: React.FC<PageProps> = () => {
                 <VisaDecisionTree
                   decisionTree={selectedCountryData.decisionTree}
                   countryCode={selectedCountryData.countryCode}
-                  countryName={selectedCountryData.name}
+                  countryName={selectedCountryData.countryName}
                 />
               )}
             </>
