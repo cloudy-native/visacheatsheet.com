@@ -18,7 +18,8 @@
     "theme": "chakra-cli tokens src/theme/index.ts",
     "theme:watch": "chakra-cli tokens src/theme/index.ts --watch",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
-    "deploy:gh": "gatsby build --prefix-paths && gh-pages -d public -b main"
+    "deploy:gh": "gatsby build --prefix-paths && gh-pages -d public -b main",
+    "generate-mermaid": "node src/decisiontrees/runMermaid.js"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.2.4",
@@ -58,6 +59,7 @@
     "@types/react": "^18.0.29",
     "@types/react-dom": "^18.0.11",
     "gh-pages": "^6.3.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5.0.2"
   }
 }

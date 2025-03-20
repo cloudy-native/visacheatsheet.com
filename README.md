@@ -1,171 +1,115 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/">
-    <img src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" alt="Gatsby logo" width="60" />
-  </a>
-  <a href="https://www.typescriptlang.org/">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" alt="TypeScript logo" width="60" />
-  </a>
-  <a href="https://chakra-ui.com/">
-    <img src="https://raw.githubusercontent.com/chakra-ui/chakra-ui/main/logo/logo-colored@2x.png?raw=true" alt="Chakra UI logo" width="180" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby TypeScript Chakra UI Blog Starter
-</h1>
+# Visa Cheatsheet
 
-<p align="center">
-A modern, opinionated blog starter with Gatsby, TypeScript, and Chakra UI. Features elegant typography, responsive design, and system-aware dark mode.
-</p>
+## Project Overview
 
-## ✨ Features
+Visa Cheatsheet is a web application designed to help travelers navigate the complex visa requirements for different countries. Using an interactive decision tree approach, users can answer a series of questions to determine which visa type they need for their travel situation. The site provides comprehensive information on visa types, requirements, application links, costs, and processing times for various countries.
 
-- **Gatsby** — Fast, optimized websites with great SEO
-- **TypeScript** — Type safety and better developer experience
-- **Chakra UI** — Beautiful, accessible components with dark mode support
-- **Blog-Focused** — Optimized for beautiful article presentation
-- **Responsive Design** — Mobile-first design that works on all devices
-- **Opinionated Theme** — Clean, elegant typography with Source Sans Pro
-- **System-Aware Dark Mode** — Automatically switches based on user preference
-- **"Buy Me Coffee" Integration** — Support monetization for your content
-- **SEO Optimized** — Meta tags, sitemaps, and robots.txt included
+## Technology Used
 
-## 🚀 Quick start
+This project is built with:
 
-1. **Clone the repository**
+- **Gatsby** - React-based static site generator for fast performance and SEO
+- **TypeScript** - Strongly-typed JavaScript for better developer experience
+- **Chakra UI** - Component library with built-in dark mode support
+- **Markdown** - Content management for blog posts
+- **Decision Tree Logic** - Custom implementation for visa requirement navigation
 
-   ```shell
-   git clone https://github.com/cloudy-native/gatsby-typescript-chakraui.git
-   ```
+## Decision Tree Data Interfaces
 
-2. **Install dependencies**
+The visa decision tree model is structured around these key interfaces:
 
-   ```shell
-   cd gatsby-typescript-chakraui
-   npm install
-   ```
+### AnswerOption
+Represents a single selectable option within a question:
+```typescript
+interface AnswerOption {
+  id: string;
+  text: string;
+  nextQuestionId: string | null;
+  additionalInfo?: string;
+  countryCode?: string;
+}
+```
 
-3. **Start the development server**
+### Question
+Represents a node in the decision tree:
+```typescript
+interface Question {
+  id: string;
+  text: string;
+  helpText?: string;
+  answerType: 'single' | 'multiple' | 'text' | 'number' | 'date';
+  options: AnswerOption[];
+  tags?: string[];
+  conditionalQuestions?: {
+    [previousQuestionId: string]: {
+      [previousAnswerId: string]: string;
+    };
+  };
+}
+```
 
-   ```shell
-   npm run develop
-   ```
+### VisaResult
+Represents a terminal node with visa information:
+```typescript
+interface VisaResult {
+  id: string;
+  title: string;
+  description: string;
+  requirements: string[];
+  applicationLinks: { text: string; url: string; }[];
+  processingTime?: string;
+  cost?: { amount: number; currency: string; };
+  alternativeOptions?: string[];
+  applicableCountries: string[];
+}
+```
 
-4. **Open the source code and start editing!**
+### VisaDecisionTree
+The overall structure containing questions and results:
+```typescript
+interface VisaDecisionTree {
+  startQuestionId: string;
+  questions: Record<string, Question>;
+  results: Record<string, VisaResult>;
+  metadata: {
+    version: string;
+    lastUpdated: string;
+    author: string;
+    countries: string[];
+  };
+}
+```
 
-   Your site is now running at `http://localhost:8000`!
-
-   The GraphQL explorer is available at `http://localhost:8000/___graphql`
-
-## 🧐 Project Structure
+## Repository Files Overview
 
 ```
 .
 ├── content/                # Blog content files
 │   └── blog/               # Blog posts with Markdown + frontmatter
-├── public/                 # Built files (generated after build)
 ├── src/                    # Source code
-│   ├── components/         # React components
+│   ├── components/         # React UI components
+│   │   ├── CountryCard.tsx # Country selection card
 │   │   ├── Header.tsx      # Site navigation header
 │   │   ├── Footer.tsx      # Site footer with links
 │   │   ├── Layout.tsx      # Main layout wrapper
+│   │   ├── VisaWizard.tsx  # Main wizard component
 │   │   └── BuyMeCoffeeButton.tsx # Support button
+│   ├── decisiontrees/      # Decision tree data and logic
+│   │   ├── model.ts        # Core interfaces
+│   │   ├── VisaDecisionTree.tsx # Decision tree component
+│   │   ├── visas.ts        # Shared visa definitions
+│   │   └── [countries]/    # Country-specific visa trees
 │   ├── pages/              # Page components
 │   │   ├── index.tsx       # Homepage
-│   │   ├── about.tsx       # About page
 │   │   ├── 404.tsx         # 404 page
+│   │   ├── visa-wizard.tsx # Visa wizard page
 │   │   └── blog/index.tsx  # Blog listing page
-│   ├── templates/          # Page templates for generated pages
+│   ├── templates/          # Page templates
 │   │   ├── blog-post.tsx   # Full-featured blog post template
 │   │   └── blog-post-simple.tsx # Minimal blog post template
 │   └── theme/              # Chakra UI theme customization
-│       └── index.ts        # Theme configuration
 ├── gatsby-browser.js       # Browser-specific configurations
 ├── gatsby-config.ts        # Gatsby configuration
 ├── gatsby-node.js          # Gatsby Node API implementations
-├── gatsby-ssr.js           # Server-side rendering configurations
 └── package.json            # Project dependencies and scripts
 ```
-
-## 🎨 Theme Customization
-
-This starter uses an opinionated theme with:
-
-- **Typography**: Source Sans Pro for both headings and body text
-- **Color Mode**: System-aware dark mode that respects user preferences
-- **Responsive Design**: Mobile-first approach with adaptive layouts
-
-### Customize the Theme
-
-Edit the theme in `src/theme/index.ts`:
-
-```typescript
-// Current theme configuration
-const theme = extendTheme({
-  config: {
-    initialColorMode: "system",
-    useSystemColorMode: true,
-  },
-  fonts: {
-    heading: "'Source Sans Pro', sans-serif",
-    body: "'Source Sans Pro', sans-serif",
-  },
-  // Add custom colors, spacing, etc.
-});
-```
-
-## 📝 Blog Content
-
-Blog posts live in `content/blog/` as Markdown files with frontmatter. Each post should be in its own directory with an `index.md` file and any images used in the post.
-
-Example blog post structure:
-```
-content/
-└── blog/
-    └── getting-started-with-gatsby-and-chakra-ui/
-        ├── index.md
-        └── hero-image.jpg
-```
-
-## 🧩 Main Components
-
-- **Layout** - Common layout with header and footer
-- **Header** - Navigation with theme toggle and mobile menu
-- **Footer** - Site footer with important links
-- **BuyMeCoffeeButton** - Support button for reader contributions
-
-## 🚀 Deployment
-
-### Build for production
-
-```shell
-npm run build
-```
-
-The build output will be in the `public/` directory, ready to be deployed to any static hosting service.
-
-## 🎓 Learning Resources
-
-- **[Gatsby Documentation](https://www.gatsbyjs.com/docs/)**
-- **[TypeScript Documentation](https://www.typescriptlang.org/docs/)**
-- **[Chakra UI Documentation](https://chakra-ui.com/docs/getting-started)**
-
-## 📝 License
-
-This project is licensed under the MIT License - see the LICENSE file for details. Attribution required.
-
-## 📸 Screenshots
-
-### Home Page (Light Mode)
-![Home Page Light Mode](doc/images/home-page-light-mode.png)
-
-### Home Page (Dark Mode)
-![Home Page Dark Mode](doc/images/home-page-dark-mode.png)
-
-### About Page
-![About Page](doc/images/about.png)
-
-### Blog Index
-![Blog Index](doc/images/blog-index.png)
-
-### Blog Post
-![Blog Post](doc/images/blog-post.png)
