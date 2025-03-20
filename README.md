@@ -13,6 +13,10 @@ This project is built with:
 - **Chakra UI** - Component library with built-in dark mode support
 - **Markdown** - Content management for blog posts
 - **Decision Tree Logic** - Custom implementation for visa requirement navigation
+- 
+## Decision Tree Graphs
+
+You can find automatically-generated graphs of all the decision trees [here](https://github.com/cloudy-native/visacheatsheet.com/tree/main/doc/trees).
 
 ## Decision Tree Data Interfaces
 
