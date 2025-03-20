@@ -8,6 +8,9 @@ tags: ["General"]
 
 The passport and visa system that travelers navigate today has evolved over centuries, shaped by historical events, geopolitical tensions, and changing approaches to national security and immigration. Let's explore how these documents developed and why we have such a diverse array of visa types today.
 
+![](./images/Four_Different_Passports.jpg)
+*Modern international passports - the standard travel document in today's world*
+
 ## Early Travel Documents: Before Modern Visas
 
 The concept of documenting travelers dates back to ancient times. One of the earliest references comes from around 450 BCE when Persian King Artaxerxes I issued a letter of safe passage to Nehemiah for travel through foreign territories. These early "passports" were essentially letters of introduction or safe conduct passes.
@@ -17,6 +20,9 @@ During the medieval period, local authorities issued documents allowing traveler
 ## The Birth of Modern Passports and Visas
 
 The modern passport system emerged in the aftermath of World War I, a conflict that dramatically changed how nations approached borders and security:
+
+![](./images/nansen_passeport.jpg)
+*Nansen passport from the 1920s - one of the first internationally standardized travel documents, created for refugees*
 
 - **1920**: The League of Nations held the Paris Conference on Passports, establishing guidelines for a standardized international passport.
 - **1921**: The League of Nations convened a follow-up conference that formalized many passport standards still in use today.
@@ -31,6 +37,9 @@ The period following World War II saw significant developments in international 
 - **1951**: The UN Refugee Convention created the framework for refugee status and asylum, leading to humanitarian visa categories.
 - **1952**: The United States Immigration and Nationality Act established new visa categories that would influence global practices.
 
+![](./images/Visa_and_border_stamps_of_Lebanon.jpg)
+*Passport pages filled with visa stamps and stickers - physical evidence of international travels*
+
 ## The Schengen Agreement: A Revolutionary Approach
 
 One of the most significant developments in visa history occurred in Europe with the Schengen Agreement:
@@ -38,6 +47,9 @@ One of the most significant developments in visa history occurred in Europe with
 - **1985**: Initially signed by five European nations (France, Germany, Belgium, Luxembourg, and the Netherlands) in the Luxembourg village of Schengen.
 - **1995**: The agreement was implemented, abolishing border controls between participating countries.
 - **1999**: The Amsterdam Treaty incorporated the Schengen rules into European Union law.
+
+![](./images/Schengen_Agreement_map.svg.png)
+*Map of the Schengen Area - a revolutionary approach to borderless travel in Europe*
 
 Today, the Schengen Area comprises 29 European countries. Citizens can travel freely within this zone, while non-EU visitors typically need a single Schengen visa that grants access to all member states—a revolutionary concept that simplified European travel dramatically.
 

@@ -91,6 +91,10 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({
   const borderColor = useColorModeValue("gray.200", "gray.700");
   const textColor = useColorModeValue("gray.700", "gray.300");
   const tagBg = useColorModeValue("blue.50", "blue.900");
+    const bgGradient = useColorModeValue(
+      "linear(to-b, blue.50, white)",
+      "linear(to-b, gray.900, gray.800)"
+    );
 
   return (
     <Box
@@ -107,6 +111,7 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({
         borderColor={borderColor}
         borderRadius="lg"
         shadow="md"
+        bgGradient={bgGradient}
         transition="all 0.3s"
         position="relative"
         _hover={{

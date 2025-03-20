@@ -241,11 +241,13 @@ const AboutPage: React.FC<PageProps> = () => {
               <VStack spacing={4} align="start">
                 <Text fontSize="lg">
                   Have you spotted outdated information or have insights about a
-                  visa process we haven't covered? We'd love to hear from you!
+                  visa process we haven't covered? Or a new country we should
+                  include? We'd love to hear from you!
                 </Text>
                 <Text fontSize="lg">
                   Our content is continuously improved through community
-                  contributions and feedback from fellow travelers.
+                  contributions and feedback from fellow travelers just like
+                  you.
                 </Text>
                 <Button
                   colorScheme="blue"

@@ -1,0 +1,732 @@
+import { VisaDecisionTree } from "./model";
+
+export const indonesiaVisaDecisionTree: VisaDecisionTree = {
+  startQuestionId: "q1",
+  questions: {
+    q1: {
+      id: "q1",
+      text: "What is the main purpose of your visit to Indonesia (including Bali)?",
+      answerType: "single",
+      options: [
+        { id: "a1", text: "Tourism/Visit", nextQuestionId: "q2" },
+        { id: "a2", text: "Work", nextQuestionId: "q3" },
+        { id: "a3", text: "Study", nextQuestionId: "q4" },
+        { id: "a4", text: "Business/Conference", nextQuestionId: "q5" },
+        { id: "a5", text: "Digital Nomad", nextQuestionId: "r6" },
+        { id: "a6", text: "Retirement", nextQuestionId: "r7" },
+        { id: "a7", text: "Transit through Indonesia", nextQuestionId: "q6" },
+        { id: "a8", text: "Social/Cultural Activities", nextQuestionId: "r8" },
+      ],
+      helpText: "Select the main reason for your travel to Indonesia",
+    },
+
+    q2: {
+      id: "q2",
+      text: "How long do you plan to stay in Indonesia as a tourist?",
+      answerType: "single",
+      options: [
+        { id: "a1", text: "Less than 30 days", nextQuestionId: "q7" },
+        { id: "a2", text: "30-60 days", nextQuestionId: "q8" },
+        { id: "a3", text: "More than 60 days", nextQuestionId: "r5" },
+      ],
+      helpText: "Most tourist visas allow stays of up to 30 or 60 days",
+    },
+
+    q3: {
+      id: "q3",
+      text: "What type of work will you be doing in Indonesia?",
+      answerType: "single",
+      options: [
+        { id: "a1", text: "Employment with an Indonesian company", nextQuestionId: "r9" },
+        { id: "a2", text: "Digital nomad/Remote work (B211A visa)", nextQuestionId: "r6" },
+        { id: "a3", text: "Teaching/Education", nextQuestionId: "r10" },
+        { id: "a4", text: "Investor/Business owner", nextQuestionId: "r11" },
+        { id: "a5", text: "Technical Expert/Consultant (short-term)", nextQuestionId: "r12" },
+      ],
+      helpText: "Different types of work in Indonesia require different permits",
+    },
+
+    q4: {
+      id: "q4",
+      text: "What is the duration of your study program in Indonesia?",
+      answerType: "single",
+      options: [
+        { id: "a1", text: "Less than 6 months (short course/language program)", nextQuestionId: "r13" },
+        { id: "a2", text: "More than 6 months (semester/full degree program)", nextQuestionId: "r14" },
+      ],
+      helpText: "Longer study programs require different visa types",
+    },
+
+    q5: {
+      id: "q5",
+      text: "How long will your business visit to Indonesia last?",
+      answerType: "single",
+      options: [
+        { id: "a1", text: "Less than 30 days (meetings, conferences, etc.)", nextQuestionId: "q7" },
+        { id: "a2", text: "30-60 days", nextQuestionId: "r15" },
+        { id: "a3", text: "More than 60 days", nextQuestionId: "r16" },
+      ],
+      helpText: "Short business trips can use VoA or B211A, longer stays require different visas",
+    },
+
+    q6: {
+      id: "q6",
+      text: "How long will you be transiting through Indonesia?",
+      answerType: "single",
+      options: [
+        { id: "a1", text: "Less than 24 hours, staying in airport transit zone", nextQuestionId: "r17" },
+        { id: "a2", text: "Need to leave airport or transit over 24 hours", nextQuestionId: "q7" },
+      ],
+      helpText: "If you need to leave the airport transit area, you may need a visa",
+    },
+
+    q7: {
+      id: "q7",
+      text: "What is your citizenship?",
+      answerType: "single",
+      options: [
+        { id: "a1", text: "Visa-free country (30 day entry)", nextQuestionId: "r1" },
+        { id: "a2", text: "Visa on Arrival eligible country", nextQuestionId: "r2" },
+        { id: "a3", text: "Visa-required country", nextQuestionId: "r3" },
+        { id: "a4", text: "Not sure about my visa requirements", nextQuestionId: "r4" },
+      ],
+      helpText: "Your citizenship determines your visa options for short stays",
+    },
+
+    q8: {
+      id: "q8",
+      text: "What is your citizenship for 30-60 day visits?",
+      answerType: "single",
+      options: [
+        { id: "a1", text: "Visa on Arrival eligible country", nextQuestionId: "r18" },
+        { id: "a2", text: "Visa-required country", nextQuestionId: "r3" },
+        { id: "a3", text: "Not sure about my visa requirements", nextQuestionId: "r4" },
+      ],
+      helpText: "For 30-60 day stays, Visa on Arrival (VoA) can be extended once",
+    },
+  },
+
+  results: {
+    r1: {
+      id: "r1",
+      title: "Visa-Free Entry",
+      description: "Citizens of certain countries can enter Indonesia without a visa for tourism, business, or family visits up to 30 days.",
+      requirements: [
+        "Valid passport with at least 6 months validity beyond your entry date",
+        "Return ticket or onward travel ticket",
+        "Cannot be extended or converted to another visa type",
+        "Must leave Indonesia after 30 days or face overstay penalties",
+        "No fee required",
+        "Entry through designated airports, seaports, and land border crossings",
+      ],
+      applicationLinks: [
+        {
+          text: "Indonesian Immigration - Visit Visa Information",
+          url: "https://www.imigrasi.go.id/en/layanan/bebas-visa-kunjungan/",
+        },
+      ],
+      processingTime: "No processing time - entry granted at border",
+      cost: {
+        amount: 0,
+        currency: "USD",
+      },
+      alternativeOptions: ["r2", "r3"],
+      applicableCountries: [
+        "ASEAN countries (Brunei, Cambodia, Malaysia, Myanmar, Philippines, Singapore, Thailand, Vietnam, Laos)",
+        "Chile",
+        "Hong Kong SAR",
+        "Macao SAR",
+        "Morocco",
+        "Peru",
+        "And others (check the immigration website for complete list)",
+      ],
+    },
+
+    r2: {
+      id: "r2",
+      title: "Visa on Arrival (VoA)",
+      description: "For tourists, business visitors, or attending conventions from eligible countries for a 30-day stay (extendable once for another 30 days).",
+      requirements: [
+        "Valid passport with at least 6 months validity beyond your entry date",
+        "Return ticket or onward travel ticket",
+        "Sufficient funds for your stay",
+        "Payment of VoA fee at arrival airport/seaport",
+        "Can be extended once for another 30 days at immigration office",
+        "Entry through designated international airports and seaports only",
+        "Cannot be converted to another visa type",
+      ],
+      applicationLinks: [
+        {
+          text: "Indonesian Immigration - Visa on Arrival Information",
+          url: "https://www.imigrasi.go.id/en/",
+        },
+      ],
+      processingTime: "Immediate (processed at arrival point)",
+      cost: {
+        amount: 500000,
+        currency: "IDR (approximately $35 USD)",
+      },
+      alternativeOptions: ["r18", "r3", "r5"],
+      applicableCountries: [
+        "Australia",
+        "Austria",
+        "Bahrain",
+        "Belgium",
+        "Brazil",
+        "Canada",
+        "China",
+        "Denmark",
+        "Finland",
+        "France",
+        "Germany",
+        "Hungary",
+        "India",
+        "Italy",
+        "Japan",
+        "Kuwait",
+        "Mexico",
+        "Netherlands",
+        "New Zealand",
+        "Norway",
+        "Oman",
+        "Poland",
+        "Qatar",
+        "Saudi Arabia",
+        "Seychelles",
+        "South Africa",
+        "South Korea",
+        "Spain",
+        "Sweden",
+        "Switzerland",
+        "Taiwan",
+        "United Arab Emirates",
+        "United Kingdom",
+        "United States",
+        "And others (check the immigration website for complete list)",
+      ],
+    },
+
+    r3: {
+      id: "r3",
+      title: "Visit Visa (B211A)",
+      description: "Pre-approved visa for tourism, family visits, or social activities for travelers from countries not eligible for visa-free entry or VoA.",
+      requirements: [
+        "Valid passport with at least 12 months validity",
+        "Completed visa application form",
+        "Recent color photograph",
+        "Proof of sufficient funds",
+        "Return ticket or onward travel ticket",
+        "Apply through nearest Indonesian Embassy or Consulate before traveling",
+        "OR apply through a visa agent/sponsor in Indonesia",
+        "Initial visa valid for 60 days, may be extended up to 4 times (30 days each)",
+        "Maximum stay of 180 days in total",
+        "Cannot be converted to other visa types",
+      ],
+      applicationLinks: [
+        {
+          text: "Indonesian Ministry of Foreign Affairs - Visa Information",
+          url: "https://kemlu.go.id/portal/en/layanan-kekonsuleran/layanan-visa",
+        },
+      ],
+      processingTime: "3-7 working days",
+      cost: {
+        amount: 50,
+        currency: "USD (may vary by Embassy/Consulate)",
+      },
+      alternativeOptions: ["r5", "r15"],
+      applicableCountries: ["All countries"],
+    },
+
+    r4: {
+      id: "r4",
+      title: "Visa Eligibility Check",
+      description: "Information on how to determine visa requirements based on your citizenship.",
+      requirements: [
+        "Check the Indonesian Immigration or nearest Embassy/Consulate website",
+        "OR contact the Indonesian Embassy/Consulate in your country",
+        "Requirements depend on:",
+        "• Your citizenship",
+        "• Purpose of visit",
+        "• Length of stay",
+        "• Current regulations (which may change periodically)",
+        "Visa requirements sometimes change with minimal notice",
+      ],
+      applicationLinks: [
+        {
+          text: "Indonesian Directorate General of Immigration",
+          url: "https://www.imigrasi.go.id/en/",
+        },
+        {
+          text: "Indonesian Ministry of Foreign Affairs",
+          url: "https://kemlu.go.id/portal/en",
+        },
+      ],
+      processingTime: "N/A (for information only)",
+      cost: {
+        amount: 0,
+        currency: "USD",
+      },
+      alternativeOptions: ["r1", "r2", "r3"],
+      applicableCountries: ["All countries"],
+    },
+
+    r5: {
+      id: "r5",
+      title: "Limited Stay Visa (B211B) for Tourism",
+      description: "For tourists wanting to stay in Indonesia for longer periods, typically up to 6 months.",
+      requirements: [
+        "Valid passport with at least 18 months validity",
+        "Completed visa application form",
+        "Recent color photograph",
+        "Sponsor letter from Indonesian sponsor (individual or agency)",
+        "Proof of accommodation for entire stay",
+        "Proof of sufficient funds for extended stay",
+        "Return ticket or proof of onward travel",
+        "Apply through nearest Indonesian Embassy or Consulate before traveling",
+        "Initial 60-day visa, extendable up to 4 times (30 days each)",
+        "Maximum stay of 180 days in total",
+      ],
+      applicationLinks: [
+        {
+          text: "Indonesian Ministry of Foreign Affairs - Visa Information",
+          url: "https://kemlu.go.id/portal/en/layanan-kekonsuleran/layanan-visa",
+        },
+      ],
+      processingTime: "5-10 working days",
+      cost: {
+        amount: 100,
+        currency: "USD (may vary by Embassy/Consulate)",
+      },
+      alternativeOptions: ["r3", "r6", "r7"],
+      applicableCountries: ["All countries"],
+    },
+
+    r6: {
+      id: "r6",
+      title: "Digital Nomad Visa (B211A)",
+      description: "For remote workers and digital nomads who want to live in Indonesia (including Bali) while working online for foreign employers.",
+      requirements: [
+        "Valid passport with at least 12 months validity",
+        "Completed visa application form",
+        "Recent color photograph",
+        "Proof of employment/income from foreign sources",
+        "Statement confirming you won't work for Indonesian companies",
+        "Bank statements showing sufficient funds",
+        "Return/onward ticket (can be flexible/changeable date)",
+        "Apply through nearest Indonesian Embassy/Consulate or visa agent",
+        "Initial 60-day visa, extendable up to 4 times (30 days each)",
+        "Maximum stay of 180 days in total",
+        "Note: This uses the standard B211A visa (tourist/social visa with sponsor)",
+      ],
+      applicationLinks: [
+        {
+          text: "Indonesian Ministry of Foreign Affairs - Visa Information",
+          url: "https://kemlu.go.id/portal/en/layanan-kekonsuleran/layanan-visa",
+        },
+      ],
+      processingTime: "3-7 working days",
+      cost: {
+        amount: 50,
+        currency: "USD (plus agent/sponsor fees if using a service)",
+      },
+      alternativeOptions: ["r5", "r9"],
+      applicableCountries: ["All countries"],
+    },
+
+    r7: {
+      id: "r7",
+      title: "Retirement Visa (KITAS Retirement)",
+      description: "Long-term stay option for retirees who want to live in Indonesia, particularly popular for Bali.",
+      requirements: [
+        "Minimum age of 55 years",
+        "Valid passport with at least 18 months validity",
+        "Proof of health/life insurance valid in Indonesia",
+        "Proof of pension/retirement funds of at least $1,500 USD per month",
+        "Proof of accommodation (rental agreement or property ownership)",
+        "Statement promising not to work in Indonesia",
+        "Local sponsor (can be arranged through agent)",
+        "Initial visa valid for 1 year, renewable for up to 5 years total",
+        "Requires multiple visits to immigration during processing",
+        "Must hire Indonesian domestic helper",
+        "Must report to immigration every 5 years for visa renewal",
+      ],
+      applicationLinks: [
+        {
+          text: "Indonesian Immigration - KITAS Information",
+          url: "https://www.imigrasi.go.id/en/",
+        },
+      ],
+      processingTime: "2-3 months for complete process",
+      cost: {
+        amount: 0,
+        currency: "USD (various fees apply, typically $1,000-1,500 USD total including agent fees)",
+      },
+      alternativeOptions: ["r5", "r11"],
+      applicableCountries: ["All countries"],
+    },
+
+    r8: {
+      id: "r8",
+      title: "Socio-Cultural Visa (B211A)",
+      description: "For visitors engaging in social and cultural activities, like visiting friends/family, cultural exchange, or volunteer work (unpaid).",
+      requirements: [
+        "Valid passport with at least 12 months validity",
+        "Completed visa application form",
+        "Recent color photograph",
+        "Letter from Indonesian sponsor (organization, family member, or friend)",
+        "Return ticket or onward travel ticket",
+        "Proof of sufficient funds for stay",
+        "Details of social/cultural activities to be undertaken",
+        "Statement confirming no paid work",
+        "Apply through nearest Indonesian Embassy/Consulate before traveling",
+        "Initial 60-day visa, extendable up to 4 times (30 days each)",
+        "Maximum stay of 180 days in total",
+      ],
+      applicationLinks: [
+        {
+          text: "Indonesian Ministry of Foreign Affairs - Visa Information",
+          url: "https://kemlu.go.id/portal/en/layanan-kekonsuleran/layanan-visa",
+        },
+      ],
+      processingTime: "3-7 working days",
+      cost: {
+        amount: 50,
+        currency: "USD (may vary by Embassy/Consulate)",
+      },
+      alternativeOptions: ["r3", "r13"],
+      applicableCountries: ["All countries"],
+    },
+
+    r9: {
+      id: "r9",
+      title: "Work Permit (KITAS) and Limited Stay Visa",
+      description: "For foreign workers employed by Indonesian companies or organizations.",
+      requirements: [
+        "Valid passport with at least 18 months validity",
+        "Job offer from Indonesian employer",
+        "Employer must sponsor and initiate the process",
+        "Employer must obtain approval from Manpower Department",
+        "Expatriate Placement Plan (RPTKA) approved by Ministry of Manpower",
+        "Notification (Notifikasi) from Ministry of Manpower",
+        "Work Permit (IMTA) from Ministry of Manpower",
+        "Limited Stay Visa approval (VITAS)",
+        "Apply for Limited Stay Permit (KITAS) after arriving in Indonesia",
+        "Multiple Entry Permit (MERP) if planning to leave and return",
+        "Police report registration within 30 days of arrival",
+        "Initial KITAS typically valid for 6-12 months, renewable",
+      ],
+      applicationLinks: [
+        {
+          text: "Indonesian Immigration - KITAS Information",
+          url: "https://www.imigrasi.go.id/en/",
+        },
+        {
+          text: "Indonesian Ministry of Manpower",
+          url: "https://kemnaker.go.id/",
+        },
+      ],
+      processingTime: "2-3 months for complete process",
+      cost: {
+        amount: 0,
+        currency: "USD (various fees apply, typically paid by employer)",
+      },
+      alternativeOptions: ["r10", "r11"],
+      applicableCountries: ["All countries"],
+    },
+
+    r10: {
+      id: "r10",
+      title: "Work Permit (KITAS) for Education Professionals",
+      description: "For teachers, researchers, and education professionals working at Indonesian educational institutions.",
+      requirements: [
+        "Valid passport with at least 18 months validity",
+        "Contract with Indonesian educational institution",
+        "Educational institution must sponsor and initiate the process",
+        "Required qualifications for teaching position (typically Bachelor's degree minimum)",
+        "Approval from Ministry of Education in addition to Manpower Department",
+        "Expatriate Placement Plan (RPTKA) approval",
+        "Work Permit (IMTA) from Ministry of Manpower",
+        "Limited Stay Visa approval (VITAS)",
+        "Apply for Limited Stay Permit (KITAS) after arriving in Indonesia",
+        "Multiple Entry Permit (MERP) if planning to leave and return",
+        "Initial KITAS typically valid for 6-12 months, renewable",
+      ],
+      applicationLinks: [
+        {
+          text: "Indonesian Immigration - KITAS Information",
+          url: "https://www.imigrasi.go.id/en/",
+        },
+        {
+          text: "Indonesian Ministry of Education",
+          url: "https://www.kemdikbud.go.id/",
+        },
+      ],
+      processingTime: "2-3 months for complete process",
+      cost: {
+        amount: 0,
+        currency: "USD (various fees apply, typically paid by employer)",
+      },
+      alternativeOptions: ["r9", "r13"],
+      applicableCountries: ["All countries"],
+    },
+
+    r11: {
+      id: "r11",
+      title: "Investor KITAS / Business KITAS",
+      description: "For foreign investors who establish or invest in companies in Indonesia.",
+      requirements: [
+        "Valid passport with at least 18 months validity",
+        "Establish Indonesian company (PT PMA - foreign investment company)",
+        "Minimum investment of approximately $700,000 USD (10 billion IDR)",
+        "Company registration documents from Ministry of Law and Human Rights",
+        "Business license from Investment Coordinating Board (BKPM)",
+        "Must be a shareholder or director in the Indonesian company",
+        "Tax ID number (NPWP) for company and individual",
+        "Statement of company domicile",
+        "Approval documents from relevant ministries depending on business field",
+        "Limited Stay Visa approval (VITAS)",
+        "Apply for Limited Stay Permit (KITAS) after arriving in Indonesia",
+        "Initial KITAS typically valid for 1 year, renewable",
+      ],
+      applicationLinks: [
+        {
+          text: "Indonesian Investment Coordinating Board (BKPM)",
+          url: "https://www.bkpm.go.id/en/home",
+        },
+      ],
+      processingTime: "3-4 months for complete process",
+      cost: {
+        amount: 0,
+        currency: "USD (various fees apply, plus significant investment requirement)",
+      },
+      alternativeOptions: ["r9", "r7"],
+      applicableCountries: ["All countries"],
+    },
+
+    r12: {
+      id: "r12",
+      title: "Technical Expert Visa (Short-term)",
+      description: "For technical experts, consultants, or specialists providing short-term services in Indonesia.",
+      requirements: [
+        "Valid passport with at least 12 months validity",
+        "Invitation letter from Indonesian company requiring technical services",
+        "Contract or agreement detailing scope and duration of services",
+        "Proof of technical qualifications or expertise",
+        "Letter from foreign employer confirming employment status",
+        "For very short assignments (less than 30 days): may use Business Visa (B211A)",
+        "For longer assignments: requires proper work permit and Limited Stay Visa",
+        "Indonesian company must sponsor the visa application",
+        "May require approval from relevant technical ministry depending on field",
+      ],
+      applicationLinks: [
+        {
+          text: "Indonesian Ministry of Foreign Affairs - Visa Information",
+          url: "https://kemlu.go.id/portal/en/layanan-kekonsuleran/layanan-visa",
+        },
+      ],
+      processingTime: "5-10 working days for Business Visa, longer for work permits",
+      cost: {
+        amount: 50,
+        currency: "USD (for Business Visa, higher costs for work permits)",
+      },
+      alternativeOptions: ["r9", "r15"],
+      applicableCountries: ["All countries"],
+    },
+
+    r13: {
+      id: "r13",
+      title: "Student Visa (B211A/B)",
+      description: "For international students enrolled in short courses, language programs, or cultural studies in Indonesia.",
+      requirements: [
+        "Valid passport with at least 12 months validity",
+        "Acceptance letter from Indonesian educational institution",
+        "Proof of enrollment and payment of tuition fees",
+        "Proof of sufficient funds for stay",
+        "Return ticket or proof of onward travel",
+        "Visa application must be sponsored by the educational institution",
+        "Apply through nearest Indonesian Embassy/Consulate before traveling",
+        "Initial visa valid for 60 days",
+        "Can be extended multiple times while in Indonesia",
+        "For courses less than 6 months",
+      ],
+      applicationLinks: [
+        {
+          text: "Indonesian Ministry of Foreign Affairs - Visa Information",
+          url: "https://kemlu.go.id/portal/en/layanan-kekonsuleran/layanan-visa",
+        },
+      ],
+      processingTime: "5-10 working days",
+      cost: {
+        amount: 50,
+        currency: "USD (may vary by Embassy/Consulate)",
+      },
+      alternativeOptions: ["r14", "r8"],
+      applicableCountries: ["All countries"],
+    },
+
+    r14: {
+      id: "r14",
+      title: "Student KITAS (Limited Stay Permit)",
+      description: "For international students enrolled in long-term degree programs at Indonesian universities.",
+      requirements: [
+        "Valid passport with at least 18 months validity",
+        "Acceptance letter from accredited Indonesian university/educational institution",
+        "Proof of enrollment in full degree program",
+        "Educational institution must sponsor the visa application",
+        "Approval from Ministry of Education and Culture",
+        "Limited Stay Visa approval (VITAS)",
+        "Apply for Limited Stay Permit (KITAS) after arriving in Indonesia",
+        "Multiple Entry Permit (MERP) if planning to leave and return",
+        "Police report registration within 30 days of arrival",
+        "Health insurance valid in Indonesia",
+        "Initial KITAS typically valid for 1 year, renewable for duration of study",
+      ],
+      applicationLinks: [
+        {
+          text: "Indonesian Immigration - Student KITAS Information",
+          url: "https://www.imigrasi.go.id/en/",
+        },
+      ],
+      processingTime: "1-2 months for complete process",
+      cost: {
+        amount: 0,
+        currency: "USD (various fees apply)",
+      },
+      alternativeOptions: ["r13"],
+      applicableCountries: ["All countries"],
+    },
+
+    r15: {
+      id: "r15",
+      title: "Business Visa (B211A)",
+      description: "For business-related activities such as meetings, conferences, or market research without actually working in Indonesia.",
+      requirements: [
+        "Valid passport with at least 12 months validity",
+        "Completed visa application form",
+        "Recent color photograph",
+        "Letter of invitation from Indonesian business partner or organization",
+        "Letter from employer stating purpose of business visit",
+        "Return ticket or onward travel ticket",
+        "Proof of sufficient funds for stay",
+        "Detailed itinerary of business activities in Indonesia",
+        "Apply through nearest Indonesian Embassy/Consulate before traveling",
+        "Initial 60-day visa, can be extended up to 4 times (30 days each)",
+        "Maximum stay of 180 days in total",
+        "Does not permit actual employment or providing paid services",
+      ],
+      applicationLinks: [
+        {
+          text: "Indonesian Ministry of Foreign Affairs - Visa Information",
+          url: "https://kemlu.go.id/portal/en/layanan-kekonsuleran/layanan-visa",
+        },
+      ],
+      processingTime: "3-7 working days",
+      cost: {
+        amount: 50,
+        currency: "USD (may vary by Embassy/Consulate)",
+      },
+      alternativeOptions: ["r2", "r16"],
+      applicableCountries: ["All countries"],
+    },
+
+    r16: {
+      id: "r16",
+      title: "Limited Stay Visa for Business (VITAS)",
+      description: "For extended business activities requiring long-term stay in Indonesia.",
+      requirements: [
+        "Valid passport with at least 18 months validity",
+        "Detailed business plan or project description",
+        "Invitation letter from Indonesian business partner",
+        "Company registration documents of Indonesian partner",
+        "Proof of business relationship or cooperation agreement",
+        "Proof of sufficient funds for extended stay",
+        "For actual employment: requires proper work permit (see Work Permit option)",
+        "Apply through nearest Indonesian Embassy/Consulate before traveling",
+        "Must convert to KITAS within 30 days of arrival in Indonesia",
+        "Multiple Entry Permit (MERP) if planning to leave and return",
+        "Police report registration required",
+      ],
+      applicationLinks: [
+        {
+          text: "Indonesian Directorate General of Immigration",
+          url: "https://www.imigrasi.go.id/en/",
+        },
+      ],
+      processingTime: "2-4 weeks",
+      cost: {
+        amount: 0,
+        currency: "USD (various fees apply)",
+      },
+      alternativeOptions: ["r15", "r9"],
+      applicableCountries: ["All countries"],
+    },
+
+    r17: {
+      id: "r17",
+      title: "Transit Without Visa",
+      description: "For travelers transiting through Indonesian airports without leaving the transit area.",
+      requirements: [
+        "Valid passport",
+        "Confirmed onward ticket for departure within 24 hours",
+        "Not leaving the international transit area",
+        "Meeting entry requirements for your final destination",
+        "No visa needed for most nationalities if staying in transit area",
+        "If planning to exit the airport, regular visa rules apply",
+      ],
+      applicationLinks: [
+        {
+          text: "Indonesian Directorate General of Immigration",
+          url: "https://www.imigrasi.go.id/en/",
+        },
+      ],
+      processingTime: "No processing - transit permitted at border",
+      cost: {
+        amount: 0,
+        currency: "USD",
+      },
+      alternativeOptions: ["r1", "r2"],
+      applicableCountries: ["Most countries"],
+    },
+
+    r18: {
+      id: "r18",
+      title: "Visa on Arrival with Extension",
+      description: "Extend your 30-day Visa on Arrival for an additional 30 days to stay up to 60 days total.",
+      requirements: [
+        "Already holding a valid Visa on Arrival (VoA)",
+        "Must apply for extension before the initial 30 days expires",
+        "Application at local immigration office (Kantor Imigrasi)",
+        "Valid passport with at least 6 months validity",
+        "Completed application form",
+        "Copy of return/onward ticket",
+        "Proof of sufficient funds for extended stay",
+        "Proof of accommodation",
+        "Processing takes 2-7 working days, during which you must surrender your passport",
+        "Maximum one extension only (additional 30 days)",
+        "Cannot be converted to other visa types",
+      ],
+      applicationLinks: [
+        {
+          text: "Indonesian Immigration - Visa Extension Information",
+          url: "https://www.imigrasi.go.id/en/",
+        },
+      ],
+      processingTime: "2-7 working days",
+      cost: {
+        amount: 500000,
+        currency: "IDR (approximately $35 USD)",
+      },
+      alternativeOptions: ["r3", "r5"],
+      applicableCountries: [
+        "All countries eligible for Visa on Arrival",
+      ],
+    },
+  },
+
+  metadata: {
+    version: "1.0.0",
+    lastUpdated: "2025-03-20",
+    author: "Claude",
+    countries: ["Indonesia", "Bali"],
+  },
+};
